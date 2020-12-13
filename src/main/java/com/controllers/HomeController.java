@@ -3,8 +3,10 @@ package com.controllers;
 import com.models.AccountEntity;
 import com.models.CategoryEntity;
 import com.models.LoginEntity;
+import com.models.ProductEntity;
 import com.services.IAccountService;
 import com.services.ICategoryService;
+import com.services.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,16 +30,21 @@ public class HomeController {
     @Autowired
     private ICategoryService iCategoryService;
 
+    @Autowired
+    private IProductService iProductService;
     @GetMapping()
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("index");
         ///load category
         Iterable<CategoryEntity> categorys = iCategoryService.findAll();
-//load category limit
+        //load category limit
         Iterable<CategoryEntity> categoryLimit = iCategoryService.findLimit();
+        //load product random
+        Iterable<ProductEntity> productEntitieRandom = iProductService.findByRandomLimit5();
         modelAndView.addObject("loginEntity", new LoginEntity());
         modelAndView.addObject("category", categorys);
         modelAndView.addObject("categoryLimit", categoryLimit);
+        modelAndView.addObject("productEntitieRandom", productEntitieRandom);
         return modelAndView;
     }
 
@@ -45,7 +52,7 @@ public class HomeController {
     public String login(@ModelAttribute("loginEntity") LoginEntity loginEntity, HttpSession session, Model model) {
         ///load category
         Iterable<CategoryEntity> categorys = iCategoryService.findAll();
-//load category limit
+        //load category limit
         Iterable<CategoryEntity> categoryLimit = iCategoryService.findLimit();
         model.addAttribute("category", categorys);
         model.addAttribute("categoryLimit", categoryLimit);

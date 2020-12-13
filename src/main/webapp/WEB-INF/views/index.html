@@ -1964,12 +1964,12 @@
                     <!--/ Title element -->
                 </div>
                 <!--/ col-sm-12 col-md-12 -->
-<th:block th:each="categoryLimit : ${categoryLimit}">
+<th:block  th:each="categoryLimit : ${categoryLimit}">
     <div class="col-sm-12 col-md-6 col-lg-4">
         <!-- Image boxes style 4 element - bottom title -->
         <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
             <!-- Image box link wrapper -->
-            <a href="#" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
+            <a th:href="'product?categoryid='+${categoryLimit.getCategoryId()}" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
                 <!-- Image -->
                 <img th:src="${categoryLimit.getImgCategory()}"
                      class="img-fluid imgbox_image cover-fit-img"
@@ -2080,7 +2080,8 @@
 													}
 												]
 											}'>
-                                            <!-- Product #1 -->
+                                            <!-- Product  -->
+                                            <th:block th:each="productRandom : ${productEntitieRandom}">
                                             <li>
                                                 <div class="product-list-item prod-layout-classic">
                                                     <!-- Badge container -->
@@ -2091,16 +2092,16 @@
                                                     <!--/ Badge container -->
 
                                                     <!-- Product container link -->
-                                                    <a href="product-detail.html">
+                                                    <a th:href="'/productdetail?idproduct='+${productRandom.getProductId()}">
                                                         <!-- Image wrapper -->
                                                         <span class="image kw-prodimage">
 																<!-- Primary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/10/web-tiger-.jpg"
+																<img th:src="${productRandom.getImgMain()}"
                                                                      class="kw-prodimage-img" alt="Kallyas Product"
                                                                      title="Kallyas Product"/>
 
                                                             <!-- Secondary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/10/120997472_4526494094089604_8017650879622720875_o.jpg"
+																<img th:src="${productRandom.getImg1()}"
                                                                      class="kw-prodimage-img-secondary"
                                                                      alt="Kallyas Product" title="Kallyas Product"/>
 															</span>
@@ -2109,14 +2110,14 @@
                                                         <!-- Details -->
                                                         <div class="details kw-details fixclear">
                                                             <!-- Title -->
-                                                            <h3 class="kw-details-title">
+                                                            <h3 class="kw-details-title" th:utext="${productRandom.getProductName()}">
                                                                 GALAXY TIGER
                                                             </h3>
 
                                                             <!-- Price -->
                                                             <span class="price">
 																	<del data-was="WAS">
-																		<span class="amount">1.000.000đ</span>
+																		<span class="amount" th:utext="${productRandom.getPrice()}">1.000.000đ</span>
 																	</del>
 																	<ins data-now="NOW">
 																		<span class="amount">800.000đ</span>
@@ -2153,296 +2154,8 @@
                                                 </div>
                                                 <!--/ product-list-item -->
                                             </li>
-                                            <!--/ Product #1 -->
-
-                                            <!-- Product #2 -->
-                                            <li>
-                                                <div class="product-list-item prod-layout-classic">
-                                                    <!-- Badge container -->
-                                                    <div class="hg_badge_container">
-
-                                                    </div>
-                                                    <!--/ Badge container -->
-
-                                                    <!-- Product container link -->
-                                                    <a href="product-detail.html">
-                                                        <!-- Image wrapper -->
-                                                        <span class="image kw-prodimage">
-																<!-- Primary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/09/webbb-.jpg"
-                                                                     class="kw-prodimage-img" alt="Kallyas Product"
-                                                                     title="Kallyas Product"/>
-
-                                                            <!-- Secondary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/09/121990455_179108563803418_473643029431472052_o.jpg"
-                                                                     class="kw-prodimage-img-secondary"
-                                                                     alt="Kallyas Product" title="Kallyas Product"/>
-															</span>
-                                                        <!--/ Image wrapper -->
-
-                                                        <!-- Details -->
-                                                        <div class="details kw-details fixclear">
-                                                            <!-- Title -->
-                                                            <h3 class="kw-details-title">
-                                                                LORENCIA
-                                                            </h3>
-
-                                                            <!-- Price -->
-                                                            <span class="price">
-																	<del data-was="WAS">
-																		<span class="amount">1.200.000đ</span>
-																	</del>
-																	<ins data-now="NOW">
-																		<span class="amount">1.000.000đ</span>
-																	</ins>
-																</span>
-                                                            <!--/ Price -->
-
-                                                            <!-- Star rating -->
-                                                            <div class="star-rating" title="Rated 3 out of 5">
-																	<span style="width:60%">
-																		<strong class="rating">3</strong> out of 5
-																	</span>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ details fixclear -->
-                                                    </a>
-                                                    <!-- Product container link -->
-
-                                                    <!-- Actions -->
-                                                    <div class="actions kw-actions">
-                                                        <a href="#" class="shopping-cart" rel="nofollow"
-                                                           data-product_id="" data-product_sku="" data-quantity="1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="28"
-                                                                 height="32" viewBox="0 0 28 32">
-                                                                <path class="svg-cart-icon"
-                                                                      d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="product-detail.html">
-                                                            <span class="more-icon fas fa-compress"></span>
-                                                        </a>
-                                                    </div>
-                                                    <!--/ Actions -->
-                                                </div>
-                                                <!--/ product-list-item -->
-                                            </li>
-                                            <!--/ Product #2 -->
-
-                                            <!-- Product #3 -->
-                                            <li>
-                                                <div class="product-list-item prod-layout-classic">
-                                                    <!-- Badge container -->
-                                                    <div class="hg_badge_container">
-															<span class="hg_badge_sale">
-																SALE!
-															</span>
-                                                    </div>
-                                                    <!--/ Badge container -->
-
-                                                    <!-- Product container link -->
-                                                    <a href="product-detail.html">
-                                                        <!-- Image wrapper -->
-                                                        <span class="image kw-prodimage">
-																<!-- Primary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/06/zeus-1-1.jpg"
-                                                                     class="kw-prodimage-img" alt="Kallyas Product"
-                                                                     title="Kallyas Product"/>
-
-                                                            <!-- Secondary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/06/Mikenco-t6-07352.jpg"
-                                                                     class="kw-prodimage-img-secondary"
-                                                                     alt="Kallyas Product" title="Kallyas Product"/>
-															</span>
-                                                        <!--/ Image wrapper -->
-
-                                                        <!-- Details -->
-                                                        <div class="details kw-details fixclear">
-                                                            <!-- Title -->
-                                                            <h3 class="kw-details-title">
-                                                                Zeus
-                                                            </h3>
-
-                                                            <!-- Price -->
-                                                            <span class="price">
-																	<span class="amount">
-																		12.000.000đ
-																	</span>
-																</span>
-                                                            <!--/ Price -->
-
-                                                            <!-- Star rating -->
-                                                            <div class="star-rating" title="Rated 4.5 out of 5">
-																	<span style="width:90%">
-																		<strong class="rating">4.5</strong> out of 5
-																	</span>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ details fixclear -->
-                                                    </a>
-                                                    <!-- Product container link -->
-
-                                                    <!-- Actions -->
-                                                    <div class="actions kw-actions">
-                                                        <a href="#" class="shopping-cart" rel="nofollow"
-                                                           data-product_id="" data-product_sku="" data-quantity="1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="28"
-                                                                 height="32" viewBox="0 0 28 32">
-                                                                <path class="svg-cart-icon"
-                                                                      d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="product-detail.html">
-                                                            <span class="more-icon fas fa-compress"></span>
-                                                        </a>
-                                                    </div>
-                                                    <!--/ Actions -->
-                                                </div>
-                                                <!--/ product-list-item -->
-                                            </li>
-                                            <!--/ Product #3 -->
-
-                                            <!-- Product #4 -->
-                                            <li>
-                                                <div class="product-list-item prod-layout-classic">
-                                                    <!-- Badge container -->
-                                                    <div class="hg_badge_container">
-
-                                                    </div>
-                                                    <!--/ Badge container -->
-
-                                                    <!-- Product container link -->
-                                                    <a href="product-detail.html">
-                                                        <!-- Image wrapper -->
-                                                        <span class="image kw-prodimage">
-																<!-- Primary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/10/suede-weaab-copy.jpg "
-                                                                     class="kw-prodimage-img" alt="Kallyas Product"
-                                                                     title="Kallyas Product"/>
-
-                                                            <!-- Secondary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/10/122458736_4588863947852618_2747611728377868814_o.jpg"
-                                                                     class="kw-prodimage-img-secondary"
-                                                                     alt="Kallyas Product" title="Kallyas Product"/>
-															</span>
-                                                        <!--/ Image wrapper -->
-
-                                                        <!-- Details -->
-                                                        <div class="details kw-details fixclear">
-                                                            <!-- Title -->
-                                                            <h3 class="kw-details-title">
-                                                                HERMES
-                                                            </h3>
-
-                                                            <!-- Price -->
-                                                            <span class="price">
-																	<span class="amount">
-																		8.000.000đ
-																	</span>
-																</span>
-                                                            <!--/ Price -->
-
-                                                            <!-- Star rating -->
-                                                            <div class="star-rating" title="Rated 0 out of 5">
-																	<span style="width:0%">
-																		<strong class="rating">0</strong> out of 5
-																	</span>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ details fixclear -->
-                                                    </a>
-                                                    <!-- Product container link -->
-
-                                                    <!-- Actions -->
-                                                    <div class="actions kw-actions">
-                                                        <a href="#" class="shopping-cart" rel="nofollow"
-                                                           data-product_id="" data-product_sku="" data-quantity="1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="28"
-                                                                 height="32" viewBox="0 0 28 32">
-                                                                <path class="svg-cart-icon"
-                                                                      d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="product-detail.html">
-                                                            <span class="more-icon fas fa-compress"></span>
-                                                        </a>
-                                                    </div>
-                                                    <!--/ Actions -->
-                                                </div>
-                                                <!--/ product-list-item -->
-                                            </li>
-                                            <!--/ Product #4 -->
-
-                                            <!-- Product #5 -->
-                                            <li>
-                                                <div class="product-list-item prod-layout-classic">
-                                                    <!-- Badge container -->
-                                                    <div class="hg_badge_container">
-
-                                                    </div>
-                                                    <!--/ Badge container -->
-
-                                                    <!-- Product container link -->
-                                                    <a href="product-detail.html">
-                                                        <!-- Image wrapper -->
-                                                        <span class="image kw-prodimage">
-																<!-- Primary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/10/web-jackett-csssopy-copy.jpg"
-                                                                     class="kw-prodimage-img" alt="Kallyas Product"
-                                                                     title="Kallyas Product"/>
-
-                                                            <!-- Secondary image -->
-																<img src="http://mikenco.vn/wp-content/uploads/2020/10/121378351_904176996656058_4147972787601097327_o.jpg"
-                                                                     class="kw-prodimage-img-secondary"
-                                                                     alt="Kallyas Product" title="Kallyas Product"/>
-															</span>
-                                                        <!--/ Image wrapper -->
-
-                                                        <!-- Details -->
-                                                        <div class="details kw-details fixclear">
-                                                            <!-- Title -->
-                                                            <h3 class="kw-details-title">
-                                                                Blind For Love
-                                                            </h3>
-
-                                                            <!-- Price -->
-                                                            <span class="price">
-																	<span class="amount">
-																		12.000.000đ
-																	</span>
-																</span>
-                                                            <!--/ Price -->
-
-                                                            <!-- Star rating -->
-                                                            <div class="star-rating" title="Rated 0 out of 5">
-																	<span style="width:0%">
-																		<strong class="rating">0</strong> out of 5
-																	</span>
-                                                            </div>
-                                                        </div>
-                                                        <!--/ details fixclear -->
-                                                    </a>
-                                                    <!-- Product container link -->
-
-                                                    <!-- Actions -->
-                                                    <div class="actions kw-actions">
-                                                        <a href="#" class="shopping-cart" rel="nofollow"
-                                                           data-product_id="" data-product_sku="" data-quantity="1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="28"
-                                                                 height="32" viewBox="0 0 28 32">
-                                                                <path class="svg-cart-icon"
-                                                                      d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="product-detail.html">
-                                                            <span class="more-icon fas fa-compress"></span>
-                                                        </a>
-                                                    </div>
-                                                    <!--/ Actions -->
-                                                </div>
-                                                <!--/ product-list-item -->
-                                            </li>
-                                            <!--/ Product #5 -->
+                                            <!--/ Product -->
+                                            </th:block>
                                         </ul>
                                         <!--/ Featured products list -->
 
@@ -2752,13 +2465,13 @@
 
 
 <!-- Login Panel content -->
-<div id="login_panel" class="mfp-hide loginbox-popup auth-popup">
+<div th:fragment="login" id="login_panel" class="mfp-hide loginbox-popup auth-popup">
     <div class="inner-container login-panel auth-popup-panel">
         <h3 class="m_title m_title_ext text-custom auth-popup-title tcolor">
             SIGN IN YOUR ACCOUNT TO HAVE ACCESS TO DIFFERENT FEATURES
         </h3>
 
-        <form class="login_panel" name="login_panel" method="post" action="/trangchu" th:action="@{/}"
+        <form class="login_panel" name="login_panel" method="post" action="/trangchu" th:action="@{/login}"
               th:object="${loginEntity}">
             <div class=" kl-fancy-form">
                 <input type="text" id="kl-username" name="username"

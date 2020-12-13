@@ -8,4 +8,6 @@ public interface IProductService {
     void save(ProductEntity productEntity);
     void delete(int id);
     Iterable<ProductEntity> findByCategoryid(int id);
+    Iterable<ProductEntity> findByRandomLimit5();
+
 }

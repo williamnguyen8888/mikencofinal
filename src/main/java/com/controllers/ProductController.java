@@ -1,15 +1,14 @@
 package com.controllers;
 
+import com.models.AccountEntity;
 import com.models.CategoryEntity;
+import com.models.LoginEntity;
 import com.models.ProductEntity;
 import com.services.ICategoryService;
 import com.services.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -20,9 +19,11 @@ public class ProductController {
     @Autowired
     private IProductService iProductService;
 
+
     @GetMapping()
     public ModelAndView product(@RequestParam(required = false) String categoryid) {
         ModelAndView modelAndView = new ModelAndView("product");
+        modelAndView.addObject("loginEntity", new LoginEntity());
         ///load category
         Iterable<CategoryEntity> categorys = iCategoryService.findAll();
         modelAndView.addObject("category", categorys);
@@ -37,6 +38,7 @@ public class ProductController {
         modelAndView.addObject("products", products);
         return modelAndView;
     }
+
 
     @RequestMapping("/list-product-api")
     @ResponseBody

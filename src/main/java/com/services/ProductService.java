@@ -4,6 +4,7 @@ package com.services;
 import com.models.ProductEntity;
 import com.repositorys.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
@@ -11,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Random;
 
 public class ProductService implements IProductService {
     @Autowired
@@ -50,5 +52,16 @@ public class ProductService implements IProductService {
         return ProductEntity;
     }
 
+    @Override
+    public Iterable<ProductEntity> findByRandomLimit5() {
+        int max = Math.round(iProductRepository.count()/5)-1;
+        int min = 1;
+        Random random = new Random();
 
+        int idx = random.nextInt((max - min) + 1) + min;
+//        Page<ProductEntity> productPage = iProductRepository.findAll(new PageRequest(idx, 5));
+        Page<ProductEntity> productPage = iProductRepository.findAll(new PageRequest(idx,  5));
+        Iterable<ProductEntity> productRandom = productPage.getContent();
+        return productRandom;
+    }
 }
