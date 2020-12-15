@@ -45,7 +45,7 @@ public class AccountService implements IAccountService {
     }
 
     @Override
-    public void delete(AccountEntity accountEntity) {
-        iAccountRepositorys.delete(accountEntity);
+    public void delete(int id) {
+        iAccountRepositorys.delete(id);
     }
 }

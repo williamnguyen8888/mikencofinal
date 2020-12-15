@@ -1249,55 +1249,8 @@
 
 
 <!-- Login Panel content -->
-<div id="login_panel" class="mfp-hide loginbox-popup auth-popup">
-    <div class="inner-container login-panel auth-popup-panel">
-        <h3 class="m_title m_title_ext text-custom auth-popup-title tcolor">
-            SIGN IN YOUR ACCOUNT TO HAVE ACCESS TO DIFFERENT FEATURES
-        </h3>
+<div th:replace="~{index.html::login}" id="login_panel" class="mfp-hide loginbox-popup auth-popup">
 
-        <form class="login_panel" name="login_panel" method="post" action="#">
-            <div class=" kl-fancy-form">
-                <input type="text" id="kl-username" name="log"
-                       class="form-control inputbox kl-fancy-form-input kl-fw-input" placeholder="eg: james_smith">
-                <label class="kl-font-alt kl-fancy-form-label">
-                    USERNAME
-                </label>
-            </div>
-
-            <div class=" kl-fancy-form">
-                <input type="password" id="kl-password" name="pwd"
-                       class="form-control inputbox kl-fancy-form-input kl-fw-input" placeholder="type password">
-                <label class="kl-font-alt kl-fancy-form-label">
-                    PASSWORD
-                </label>
-            </div>
-
-            <label class="auth-popup-remember" for="kl-rememberme">
-                <input type="checkbox" name="rememberme" id="kl-rememberme" value="forever"
-                       class="auth-popup-remember-chb"> Remember Me
-            </label>
-
-            <input type="submit" id="login" name="submit_button" class="btn zn_sub_button btn-fullcolor btn-md"
-                   value="LOG IN">
-
-            <input type="hidden" value="login" class="" name="form_action">
-            <input type="hidden" value="login" class="" name="action">
-            <input type="hidden" value="#" class="" name="submit">
-
-            <div class="links auth-popup-links">
-                <a href="#register_panel" class="create_account auth-popup-createacc kl-login-box auth-popup-link">
-                    CREATE AN ACCOUNT
-                </a>
-
-                <span class="sep auth-popup-sep"></span>
-
-                <a href="#forgot_panel" class="kl-login-box auth-popup-link">
-                    FORGOT YOUR PASSWORD?
-                </a>
-            </div>
-        </form>
-    </div>
-    <button title="Close (Esc)" type="button" class="mfp-close">×</button>
 </div>
 <div id="register_panel" class="mfp-hide loginbox-popup auth-popup">
     <div class="inner-container register-panel auth-popup-panel">

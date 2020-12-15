@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
 <!-- Mirrored from colorlib.com/polygon/admindek/default/dt-ext-autofill.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Nov 2020 01:32:20 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
@@ -1370,8 +1368,7 @@
                                                             <tbody>
 
 
-                                                            <c:forEach items='${requestScope["productsReultAdmin"]}'
-                                                                       var="productReultAdmin">
+
 																<tr>
 																	<td>${productReultAdmin.getNameProduct()}</td>
 																	<td>${productReultAdmin.getQuantity()}</td>
@@ -1429,12 +1426,12 @@
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <select class="form-control required" name="categoryId">
-                                                                                                                <c:forEach items='${requestScope["categoryListEdit"]}'
+
                                                                                                                            var="categoryEdit">
 
                                                                                                                     <option value="${categoryEdit.getCategoryID()}">${categoryEdit.getNameCategory()}</option>
 
-                                                                                                                </c:forEach>
+
                                                                                                             </select>
                                                                                                         </div>
                                                                                                     </div>
@@ -1691,7 +1688,7 @@
 
                                                                     </div>
                                                                 </div>
-                                                            </c:forEach>
+
 
                                                             <script>
                                                                 function getID(idProduct){

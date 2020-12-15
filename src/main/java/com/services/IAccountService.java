@@ -9,5 +9,5 @@ public interface IAccountService {
     AccountEntity findById(int id);
     AccountEntity checkLogin(LoginEntity loginEntity);
     void save(AccountEntity accountEntity);
-    void delete(AccountEntity accountEntity);
+    void delete(int id);
 }

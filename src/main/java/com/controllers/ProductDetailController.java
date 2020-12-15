@@ -1,6 +1,7 @@
 package com.controllers;
 
 import com.models.CategoryEntity;
+import com.models.LoginEntity;
 import com.models.ProductEntity;
 import com.services.ICategoryService;
 import com.services.IProductDetailService;
@@ -34,6 +35,7 @@ public class ProductDetailController {
         ///load product detail
         ProductEntity productEntity = productDetailService.findById(idproduct);
         modelAndView.addObject("productDetail", productEntity);
+        modelAndView.addObject("loginEntity", new LoginEntity());
         return modelAndView;
     }
     @GetMapping("/productDetailApi")

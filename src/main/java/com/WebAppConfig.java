@@ -3,6 +3,7 @@ package com;
 //package com.vn;
 //import com.vn.services.IProductService;
 //import com.vn.services.ProductService;
+
 import com.services.*;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,10 +28,12 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
+
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
@@ -38,13 +41,15 @@ import java.util.Properties;
 @ComponentScan("com.controllers")
 public class WebAppConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
     private ApplicationContext applicationContext;
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
+
     //Thymeleaf Configuration
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
@@ -53,6 +58,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
         templateResolver.setCharacterEncoding("UTF-8");
         return templateResolver;
     }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/videos/**")
@@ -69,30 +75,38 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
 
         registry.addResourceHandler("/js/**")
                 .addResourceLocations("/WEB-INF/views/js/");
+        registry.addResourceHandler("/admin/files/assets/**")
+                .addResourceLocations("/WEB-INF/views/admin/files/assets/");
+        registry.addResourceHandler("/admin/files/bower_components/**")
+                .addResourceLocations("/WEB-INF/views/admin/files/bower_components/");
     }
+
     @Bean
-    public TemplateEngine templateEngine(){
+    public TemplateEngine templateEngine() {
         TemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
     }
+
     @Bean
-    public ThymeleafViewResolver viewResolver(){
+    public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
         return viewResolver;
     }
+
     // configuration Hibernate
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/mikencobrandnew");
-        dataSource.setUsername( "root" );
-        dataSource.setPassword( "tuananhdeptrai" );
+        dataSource.setUsername("root");
+        dataSource.setPassword("tuananhdeptrai");
         return dataSource;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
@@ -103,38 +117,49 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
         em.setJpaProperties(additionalProperties());
         return em;
     }
+
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
         return transactionManager;
     }
+
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         return properties;
     }
+
     //    JPA configuration
     @Bean
     @Qualifier(value = "entityManager")
     public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
         return entityManagerFactory.createEntityManager();
     }
+
     @Bean
-    public IAccountService AccountServive(){
+    public IAccountService AccountServive() {
         return new AccountService();
     }
+
     @Bean
-    public ICategoryService CategoryServive(){
+    public ICategoryService CategoryServive() {
         return new CategoryService();
     }
+
     @Bean
-    public IProductDetailService ProductDetailService(){
+    public IProductDetailService ProductDetailService() {
         return new ProductDetailService();
     }
+
     @Bean
-    public IProductService ProductService(){
+    public IProductService ProductService() {
         return new ProductService();
+    }
+    @Bean
+    public ITypeOfAccountService TypeOfAccountService() {
+        return new TypeOfAccountService();
     }
 }
