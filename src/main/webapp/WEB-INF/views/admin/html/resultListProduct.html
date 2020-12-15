@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <!-- Mirrored from colorlib.com/polygon/admindek/default/dt-ext-autofill.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Nov 2020 01:32:20 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
     <title>Admindek | Admin Template</title>
-	<style>
-		.imgPreview:hover {
-			-ms-transform: scale(4.5); /* IE 9 */
-			-webkit-transform: scale(4.5); /* Safari 3-8 */
-			transform: scale(4.5);
-		}
-	</style>
-    <script type="text/javascript" src="admin/files/bower_components/jquery/js/jquery.min.js"></script>
+    <style>
+        .imgPreview:hover {
+            -ms-transform: scale(4.5); /* IE 9 */
+            -webkit-transform: scale(4.5); /* Safari 3-8 */
+            transform: scale(4.5);
+        }
+    </style>
+    <script type="text/javascript" src="files/bower_components/jquery/js/jquery.min.js"></script>
 
     <!--[if lt IE 10]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -34,33 +34,35 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="admin/files/bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="files/bower_components/bootstrap/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="admin/files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
 
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/icon/feather/css/feather.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/feather/css/feather.css">
 
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/themify-icons/themify-icons.css">
 
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/icofont/css/icofont.css">
 
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/icon/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/icon/font-awesome/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css"
-          href="admin/files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/pages/data-table/css/buttons.dataTables.min.css">
+          href="files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css"
-          href="admin/files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+          href="files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css"
-          href="admin/files/assets/pages/data-table/extensions/autofill/css/autoFill.dataTables.min.css">
+          href="files/assets/pages/data-table/extensions/autofill/css/autoFill.dataTables.min.css">
     <link rel="stylesheet" type="text/css"
-          href="admin/files/assets/pages/data-table/extensions/autofill/css/select.dataTables.min.css">
+          href="files/assets/pages/data-table/extensions/autofill/css/select.dataTables.min.css">
 
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="admin/files/assets/css/pages.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/css/pages.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
 
-        .modal-body{
+        .modal-body {
             overflow-scrolling: auto;
         }
     </style>
@@ -79,7 +81,8 @@
             <div class="navbar-wrapper">
                 <div class="navbar-logo">
                     <a href="index.html">
-                        <img class="img-fluid" src="http://mikenco.vn/wp-content/uploads/2020/10/logo-white.png" style="max-width: 120px" alt="Theme-Logo"/>
+                        <img class="img-fluid" src="http://mikenco.vn/wp-content/uploads/2020/10/logo-white.png"
+                             style="max-width: 120px" alt="Theme-Logo"/>
                     </a>
                     <a class="mobile-menu" id="mobile-collapse" href="#!">
                         <i class="feather icon-menu icon-toggle-right"></i>
@@ -124,7 +127,7 @@
                                     </li>
                                     <li>
                                         <div class="media">
-                                            <img class="img-radius" src="admin/files/assets/images/avatar-4.jpg"
+                                            <img class="img-radius" src="files/assets/images/avatar-4.jpg"
                                                  alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
@@ -136,7 +139,7 @@
                                     </li>
                                     <li>
                                         <div class="media">
-                                            <img class="img-radius" src="admin/files/assets/images/avatar-3.jpg"
+                                            <img class="img-radius" src="files/assets/images/avatar-3.jpg"
                                                  alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
@@ -148,7 +151,7 @@
                                     </li>
                                     <li>
                                         <div class="media">
-                                            <img class="img-radius" src="admin/files/assets/images/avatar-4.jpg"
+                                            <img class="img-radius" src="files/assets/images/avatar-4.jpg"
                                                  alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
@@ -172,7 +175,7 @@
                         <li class="user-profile header-notification">
                             <div class="dropdown-primary dropdown">
                                 <div class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="admin/files/assets/images/avatar-4.jpg" class="img-radius"
+                                    <img src="files/assets/images/avatar-4.jpg" class="img-radius"
                                          alt="User-Profile-Image">
                                     <span>John Doe</span>
                                     <i class="feather icon-chevron-down"></i>
@@ -236,7 +239,7 @@
                                  data-username="Josephin Doe">
                                 <a class="media-left" href="#!">
                                     <img class="media-object img-radius img-radius"
-                                         src="admin/files/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
+                                         src="files/assets/images/avatar-3.jpg" alt="Generic placeholder image ">
                                     <div class="live-status bg-success"></div>
                                 </a>
                                 <div class="media-body">
@@ -246,7 +249,7 @@
                             <div class="media userlist-box waves-effect waves-light" data-id="2" data-status="online"
                                  data-username="Lary Doe">
                                 <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="admin/files/assets/images/avatar-2.jpg"
+                                    <img class="media-object img-radius" src="files/assets/images/avatar-2.jpg"
                                          alt="Generic placeholder image">
                                     <div class="live-status bg-success"></div>
                                 </a>
@@ -257,7 +260,7 @@
                             <div class="media userlist-box waves-effect waves-light" data-id="3" data-status="online"
                                  data-username="Alice">
                                 <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="admin/files/assets/images/avatar-4.jpg"
+                                    <img class="media-object img-radius" src="files/assets/images/avatar-4.jpg"
                                          alt="Generic placeholder image">
                                     <div class="live-status bg-success"></div>
                                 </a>
@@ -268,7 +271,7 @@
                             <div class="media userlist-box waves-effect waves-light" data-id="4" data-status="offline"
                                  data-username="Alia">
                                 <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="admin/files/assets/images/avatar-3.jpg"
+                                    <img class="media-object img-radius" src="files/assets/images/avatar-3.jpg"
                                          alt="Generic placeholder image">
                                     <div class="live-status bg-default"></div>
                                 </a>
@@ -280,7 +283,7 @@
                             <div class="media userlist-box waves-effect waves-light" data-id="5" data-status="offline"
                                  data-username="Suzen">
                                 <a class="media-left" href="#!">
-                                    <img class="media-object img-radius" src="admin/files/assets/images/avatar-2.jpg"
+                                    <img class="media-object img-radius" src="files/assets/images/avatar-2.jpg"
                                          alt="Generic placeholder image">
                                     <div class="live-status bg-default"></div>
                                 </a>
@@ -305,7 +308,7 @@
             <div class="main-friend-chat">
                 <div class="media chat-messages">
                     <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-radius img-radius m-t-5" src="admin/files/assets/images/avatar-2.jpg"
+                        <img class="media-object img-radius img-radius m-t-5" src="files/assets/images/avatar-2.jpg"
                              alt="Generic placeholder image">
                     </a>
                     <div class="media-body chat-menu-content">
@@ -325,7 +328,7 @@
                 </div>
                 <div class="media chat-messages">
                     <a class="media-left photo-table" href="#!">
-                        <img class="media-object img-radius img-radius m-t-5" src="admin/files/assets/images/avatar-2.jpg"
+                        <img class="media-object img-radius img-radius m-t-5" src="files/assets/images/avatar-2.jpg"
                              alt="Generic placeholder image">
                     </a>
                     <div class="media-body chat-menu-content">
@@ -352,23 +355,23 @@
         <div class="pcoded-main-container">
             <div class="pcoded-wrapper">
 
-				<nav class="pcoded-navbar">
-					<div class="nav-list">
-						<div class="pcoded-inner-navbar main-menu">
-							<div class="pcoded-navigation-label">Statistical</div>
-							<ul class="pcoded-item pcoded-left-item">
-								<li class="pcoded-hasmenu">
-									<a href="javascript:void(0)" class="waves-effect waves-dark">
-										<span class="pcoded-micon"><i class="feather icon-home"></i></span>
-										<span class="pcoded-mtext">Dashboard</span>
-									</a>
-									<ul class="pcoded-submenu">
-										<li class="">
-											<a href="index.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Home</span>
-											</a>
-										</li>
-										<!-- <li class="">
+                <nav class="pcoded-navbar">
+                    <div class="nav-list">
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="pcoded-navigation-label">Statistical</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                                        <span class="pcoded-mtext">Dashboard</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="index.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Home</span>
+                                            </a>
+                                        </li>
+                                        <!-- <li class="">
                                             <a href="dashboard-crm.html" class="waves-effect waves-dark">
                                                 <span class="pcoded-mtext">CRM</span>
                                             </a>
@@ -379,9 +382,9 @@
                                                 <span class="pcoded-badge label label-info ">NEW</span>
                                             </a>
                                         </li> -->
-									</ul>
-								</li>
-								<!-- <li class="pcoded-hasmenu">
+                                    </ul>
+                                </li>
+                                <!-- <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
                                         <span class="pcoded-mtext">Page layouts</span>
@@ -449,7 +452,7 @@
                                         </li>
                                     </ul>
                                 </li> -->
-								<!-- 									<li class="">
+                                <!-- 									<li class="">
                                                                         <a href="navbar-light.html" class="waves-effect waves-dark">
                                                                             <span class="pcoded-micon">
                                                                                 <i class="feather icon-menu"></i>
@@ -457,7 +460,7 @@
                                                                             <span class="pcoded-mtext">Navigation</span>
                                                                         </a>
                                                                     </li> -->
-								<!-- 									<li class="pcoded-hasmenu">
+                                <!-- 									<li class="pcoded-hasmenu">
                                                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                                             <span class="pcoded-micon">
                                                                                 <i class="feather icon-layers"></i>
@@ -483,11 +486,11 @@
                                                                             </li>
                                                                         </ul>
                                                                     </li> -->
-							</ul>
+                            </ul>
 
-							<div class="pcoded-navigation-label">Acount Manage</div>
-							<ul class="pcoded-item pcoded-left-item">
-								<!-- 									<li class="pcoded-hasmenu">
+                            <div class="pcoded-navigation-label">Acount Manage</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <!-- 									<li class="pcoded-hasmenu">
                                                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                                             <span class="pcoded-micon">
                                                                                 <i class="feather icon-box"></i>
@@ -633,7 +636,7 @@
                                                                         </li>
                                                                     </ul>
                                                                 </li> -->
-								<!-- 								<li class="pcoded-hasmenu">
+                                <!-- 								<li class="pcoded-hasmenu">
                                                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                                         <span class="pcoded-micon">
                                                                             <i class="feather icon-package"></i>
@@ -666,647 +669,68 @@
                                                                         <span class="pcoded-mtext">Animations</span>
                                                                     </a>
                                                                 </li> -->
-								<li class="pcoded-hasmenu">
-									<a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
 										<span class="pcoded-micon">
 											<i class="feather icon-command"></i>
 										</span>
-										<span class="pcoded-mtext">Icons</span>
-									</a>
-									<ul class="pcoded-submenu">
-										<li class=" ">
-											<a href="icon-font-awesome.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Font Awesome</span>
-											</a>
-										</li>
-										<li class=" ">
-											<a href="icon-themify.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Themify</span>
-											</a>
-										</li>
-										<li class=" ">
-											<a href="icon-simple-line.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Simple Line Icon</span>
-											</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<div class="pcoded-navigation-label">Product Manager</div>
-							<ul class="pcoded-item pcoded-left-item">
-								<li class="pcoded-hasmenu active pcoded-trigger">
-									<a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-mtext">Icons</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="icon-font-awesome.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Font Awesome</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="icon-themify.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Themify</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="icon-simple-line.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Simple Line Icon</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Product Manager</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu active pcoded-trigger">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
 										<span class="pcoded-micon">
 											<i class="feather icon-clipboard"></i>
 										</span>
-										<span class="pcoded-mtext">Form</span>
-									</a>
-									<ul class="pcoded-submenu">
-										<li class="active">
-											<a href="form-elements-component.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Add Product</span>
-											</a>
-										</li>
-										<li class=" ">
-											<a href="form-elements-add-on.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Add-On</span>
-											</a>
-										</li>
-										<li class=" ">
-											<a href="form-elements-advance.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Advance</span>
-											</a>
-										</li>
-										<li class=" ">
-											<a href="form-validation.html" class="waves-effect waves-dark">
-												<span class="pcoded-mtext">Validation</span>
-											</a>
-										</li>
-									</ul>
-								</li>
-								<!-- 								<li class=" ">
-                                                                    <a href="form-picker.html" class="waves-effect waves-dark">
-                                                                        <span class="pcoded-micon">
-                                                                            <i class="feather icon-edit-1"></i>
-                                                                        </span>
-                                                                        <span class="pcoded-mtext">Form Picker</span>
-                                                                        <span class="pcoded-badge label label-warning">NEW</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class=" ">
-                                                                    <a href="form-select.html" class="waves-effect waves-dark">
-                                                                        <span class="pcoded-micon">
-                                                                            <i class="feather icon-feather"></i>
-                                                                        </span>
-                                                                        <span class="pcoded-mtext">Form Select</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class=" ">
-                                                                    <a href="form-masking.html" class="waves-effect waves-dark">
-                                                                        <span class="pcoded-micon">
-                                                                            <i class="feather icon-shield"></i>
-                                                                        </span>
-                                                                        <span class="pcoded-mtext">Form Masking</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class=" ">
-                                                                    <a href="form-wizard.html" class="waves-effect waves-dark">
-                                                                        <span class="pcoded-micon">
-                                                                            <i class="feather icon-tv"></i>
-                                                                        </span>
-                                                                        <span class="pcoded-mtext">Form Wizard</span>
-                                                                    </a>
-                                                                </li> -->
-							</ul>
-							<!-- 							<div class="pcoded-navigation-label">Tables</div>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="pcoded-hasmenu">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-credit-card"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Bootstrap Table</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class=" ">
-                                                                        <a href="bs-basic-table.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Basic Table</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="bs-table-sizing.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Sizing Table</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="bs-table-border.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Border Table</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="bs-table-styling.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Styling Table</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-inbox"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Data Table</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class=" ">
-                                                                        <a href="dt-basic.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Basic Initialization</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-advance.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Advance Initialization</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-styling.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Styling</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-api.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">API</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ajax.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Ajax</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-server-side.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Server Side</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-plugin.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Plug-In</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-data-sources.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Data Sources</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-server"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">DT Extensions</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-autofill.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">AutoFill</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="pcoded-hasmenu">
-                                                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Button</span>
-                                                                        </a>
-                                                                        <ul class="pcoded-submenu">
-                                                                            <li class=" ">
-                                                                                <a href="dt-ext-basic-buttons.html" class="waves-effect waves-dark">
-                                                                                    <span class="pcoded-mtext">Basic Button</span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li class=" ">
-                                                                                <a href="dt-ext-buttons-html-5-data-export.html" class="waves-effect waves-dark">
-                                                                                    <span class="pcoded-mtext">Data Export</span>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-col-reorder.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Col Reorder</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-fixed-columns.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Fixed Columns</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-fixed-header.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Fixed Header</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-key-table.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Key Table</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-responsive.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Responsive</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-row-reorder.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Row Reorder</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-scroller.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Scroller</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class=" ">
-                                                                        <a href="dt-ext-select.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Select Table</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class=" ">
-                                                                <a href="foo-table.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-hash"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">FooTable</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-airplay"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Handson Table</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="handson-appearance.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Appearance</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-data-operation.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Data Operation</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-rows-cols.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Rows Columns</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-columns-only.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Columns Only</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-cell-features.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Cell Features</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-cell-types.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Cell Types</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-integrations.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Integrations</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-rows-only.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Rows Only</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="handson-utilities.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Utilities</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="editable-table.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-edit"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Editable Table</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul> -->
-							<!-- 							<div class="pcoded-navigation-label">Chart And Maps</div>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-pie-chart"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Charts</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="chart-google.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Google Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-chartjs.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">ChartJs</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-list.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">List Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-float.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Float Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-knob.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Knob chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-morris.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Morris Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-nvd3.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Nvd3 Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-peity.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Peity Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-radial.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Radial Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-rickshaw.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Rickshaw Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-sparkline.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Sparkline Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="chart-c3.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">C3 Chart</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-map"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Maps</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="map-google.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Google Maps</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="map-vector.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Vector Maps</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="map-api.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Google Map Search API</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="location.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Location</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul> -->
-							<!-- 							<div class="pcoded-navigation-label">Pages</div>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-unlock"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Authentication</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="auth-sign-in-social.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Login</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="auth-sign-up-social.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Registration</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="auth-reset-password.html" target="_blank" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Forgot Password</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="auth-lock-screen.html" target="_blank" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Lock Screen</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-sliders"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Maintenance</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="error.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Error</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="comming-soon.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Comming Soon</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="offline-ui.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Offline UI</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-mail"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Email</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="email-compose.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Compose Email</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="email-inbox.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Inbox</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="email-read.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Read Mail</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul> -->
-							<!-- 							<div class="pcoded-navigation-label">App</div>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="">
-                                                                <a href="todo.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-bookmark"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">To-Do</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul> -->
-							<!-- 							<div class="pcoded-navigation-label">Extension</div>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-file-plus"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Editor</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="ck-editor.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">CK-Editor</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="wysiwyg-editor.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">WYSIWYG Editor</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-calendar"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Event Calendar</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="event-full-calender.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Full Calendar</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="event-clndr.html" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">CLNDER</span>
-                                                                            <span class="pcoded-badge label label-info">NEW</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="image-crop.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-scissors"></i>
-                                                                        <b>IC</b>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Image Cropper</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="file-upload.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-upload-cloud"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">File Upload</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="change-loges.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-briefcase"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Change Loges</span>
-                                                                    <span class="pcoded-badge label label-warning">1.0</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul> -->
-							<!-- 							<div class="pcoded-navigation-label">Other</div>
-                                                        <ul class="pcoded-item pcoded-left-item">
-                                                            <li class="pcoded-hasmenu ">
-                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-list"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Menu Levels</span>
-                                                                </a>
-                                                                <ul class="pcoded-submenu">
-                                                                    <li class="">
-                                                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Menu Level 2.1</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="pcoded-hasmenu ">
-                                                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Menu Level 2.2</span>
-                                                                        </a>
-                                                                        <ul class="pcoded-submenu">
-                                                                            <li class="">
-                                                                                <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                                    <span class="pcoded-mtext">Menu Level 3.1</span>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class="">
-                                                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                                            <span class="pcoded-mtext">Menu Level 2.3</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="javascript:void(0)" class="disabled waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-power"></i>
-                                                                        <b>D</b>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Disabled Menu</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="sample-page.html" class="waves-effect waves-dark">
-                                                                    <span class="pcoded-micon">
-                                                                        <i class="feather icon-watch"></i>
-                                                                    </span>
-                                                                    <span class="pcoded-mtext">Sample Page</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul> -->
-
-						</div>
-					</div>
-				</nav>
+                                        <span class="pcoded-mtext">Form</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="active">
+                                            <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Add Product</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="form-elements-add-on.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Add-On</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="form-elements-advance.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Advance</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="form-validation.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-mtext">Validation</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 
                 <div class="pcoded-content">
 
@@ -1348,8 +772,387 @@
 
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <h5>List Product</h5>
-                                                    <span>AutoFill gives an Excel like option to a DataTable to click and drag over multiple cells, filling in information over the selected cells and incrementing numbers as needed.</span>
+                                                    <h5>Product</h5>
+                                                    <button type="button" class="btn btn-success"
+                                                            th:attr="data-target='#newproduct'"
+                                                            data-toggle="modal" style="float: right">
+                                                        <i class="fas fa-user-plus"></i> New Product
+                                                    </button>
+                                                    <!-- Modal -->
+                                                    <div th:id="newproduct"
+                                                         class="modal fade" role="dialog">
+                                                        <div class="modal-dialog modal-lg">
+
+                                                            <!-- Modal content-->
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close"
+                                                                            data-dismiss="modal">&times;
+                                                                    </button>
+                                                                    <h4 class="modal-title"></h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="col-md-12">
+                                                                        <div id="wizardb">
+                                                                            <section>
+                                                                                <form class="wizard-form"
+                                                                                      th:action="@{/admin/addproduct}"
+                                                                                      th:object="${productNew}"
+                                                                                      method="post">
+                                                                                    <h3> Product Info </h3>
+
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Id
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input
+                                                                                                       name="ProductId"
+                                                                                                       type="text"
+                                                                                                       th:field="*{productId}"
+                                                                                                       class="form-control "
+                                                                                                       readonly>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Name
+                                                                                                    Product
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input
+                                                                                                       th:field="*{productName}"
+
+                                                                                                       class=" form-control">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Category
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <select class="form-control required"
+                                                                                                        th:field="*{categoryId}">
+                                                                                                    <th:block th:each="category : ${categorys}">
+                                                                                                        <option th:value="${category.getCategoryId()}" th:utext="${category.getNameCategory()}">
+                                                                                                            ${categoryEdit.getNameCategory()}
+                                                                                                        </option>
+                                                                                                    </th:block>
+
+
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Color
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input
+
+                                                                                                       type="text"
+                                                                                                       class="form-control ">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Price*</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input id="confirm-2b1${productReultAdmin.getProductId()}"
+
+
+                                                                                                       class="form-control " th:field="*{price}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Description*</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input
+
+
+                                                                                                        class="form-control " th:field="*{description}">
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    <h3> Image Product </h3>
+
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">IMG
+                                                                                                    Main
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <input id="imgInp"
+
+
+                                                                                                       class="form-control" th:field="*{imgMain}">
+
+
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+
+                                                                                                <img id="blah"
+                                                                                                     src="#"
+                                                                                                     style="max-width: 350px"/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <script type="text/javascript">
+                                                                                            jQuery(document).ready(function ($) {
+
+                                                                                                $('#imgInp').bind('input', function () {
+                                                                                                    $('#blah').attr('src', $(this).val()); //concatinate path if required
+                                                                                                });
+
+                                                                                            });
+                                                                                        </script>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">IMG
+                                                                                                    Child 1
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <input id="imgInp1"
+
+
+                                                                                                       class="form-control" th:field="*{img1}">
+
+
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+
+                                                                                                <img id="blah1"
+                                                                                                     src="#"
+                                                                                                     style="max-width: 350px"/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <script type="text/javascript">
+                                                                                            jQuery(document).ready(function ($) {
+
+                                                                                                $('#imgInp1').bind('input', function () {
+                                                                                                    $('#blah1').attr('src', $(this).val()); //concatinate path if required
+                                                                                                });
+
+                                                                                            });
+                                                                                        </script>
+
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">IMG
+                                                                                                    Child 2
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <input id="imgInp2"
+
+
+                                                                                                       class="form-control" th:field="*{img2}">
+
+
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+
+                                                                                                <img id="blah2"
+                                                                                                     src="#"
+                                                                                                     style="max-width: 350px"/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <script type="text/javascript">
+                                                                                            jQuery(document).ready(function ($) {
+
+                                                                                                $('#imgInp2').bind('input', function () {
+                                                                                                    $('#blah2').attr('src', $(this).val()); //concatinate path if required
+                                                                                                });
+
+                                                                                            });
+                                                                                        </script>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">IMG
+                                                                                                    Child 3
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <input id="imgInp3"
+
+
+                                                                                                       class="form-control" th:field="*{img3}">
+
+
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <img id="blah3"
+                                                                                                     src="#"
+                                                                                                     style="max-width: 350px"/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <script type="text/javascript">
+                                                                                            $(document).ready(function ($) {
+
+                                                                                                $('#imgInp3').bind('input', function () {
+                                                                                                    $('#blah3').attr('src', $(this).val()); //concatinate path if required
+                                                                                                });
+
+                                                                                            });
+                                                                                        </script>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">IMG
+                                                                                                    Child 4
+                                                                                                    *</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+                                                                                                <input id="imgName"
+
+
+                                                                                                       class="form-control" th:field="*{img4}">
+
+
+                                                                                            </div>
+                                                                                            <div class="col-sm-6">
+
+                                                                                                <img id="imageHolder"
+                                                                                                     src="#"
+                                                                                                     style="max-width: 350px"/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <script type="text/javascript">
+                                                                                            jQuery(document).ready(function ($) {
+
+                                                                                                $('#imgName').bind('input', function () {
+                                                                                                    $('#imageHolder').attr('src', $(this).val()); //concatinate path if required
+                                                                                                });
+
+                                                                                            });
+                                                                                        </script>
+
+
+
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Quantity:</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input
+
+
+                                                                                                       class="form-control required" th:field="*{quantity}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Size
+                                                                                                    S</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input id="CountryW-2b${productReultAdmin.getProductId()}"
+
+
+                                                                                                       class="form-control required" th:field="*{sizeS}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Size
+                                                                                                    M</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input id="Position-2b1${productReultAdmin.getProductId()}"
+
+
+                                                                                                       class="form-control required" th:field="*{sizeM}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Size
+                                                                                                    L</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input id="Position-2b2${productReultAdmin.getProductId()}"
+
+
+                                                                                                       class="form-control required" th:field="*{sizeL}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Size
+                                                                                                    XL</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input id="Position-2b3${productReultAdmin.getProductId()}"
+
+
+                                                                                                       class="form-control required" th:field="*{sizeXl}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label
+                                                                                                        class="block">Size
+                                                                                                    XXL</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <input id="Position-2b${productReultAdmin.getProductId()}"
+
+
+                                                                                                       class="form-control required" th:field="*{sizeXxl}">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <input type="submit"
+
+                                                                                               class="btn btn-success"
+                                                                                               value="Update">
+
+                                                                                </form>
+
+                                                                            </section>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button"
+                                                                        class="btn btn-default"
+                                                                        data-dismiss="modal">Close
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                                 <div class="card-block">
                                                     <div class="dt-responsive table-responsive">
@@ -1368,104 +1171,148 @@
                                                             <tbody>
 
 
+                                                            <th:block th:each="productReultAdmin : ${products}">
 
-																<tr>
-																	<td>${productReultAdmin.getNameProduct()}</td>
-																	<td>${productReultAdmin.getQuantity()}</td>
-																	<td>${productReultAdmin.getPrice()}</td>
-																	<td><img class="imgPreview" src="${productReultAdmin.getImgMain()}" alt="" style="max-width: 50px"></td>
-																	<td><button type="button" class="btn btn-primary" id="${productReultAdmin.getProductId()}" data-toggle="modal" data-target="#editModal${productReultAdmin.getProductId()}">Edit</button></td>
-																	<td><button type="button" class="btn btn-danger" id="${productReultAdmin.getProductId()}" onclick="getID($(this).attr('id'))">Delete</button></td>
-																</tr>
+
+                                                                <tr>
+                                                                    <td th:utext="${productReultAdmin.getProductName()}">
+                                                                        ${productReultAdmin.getNameProduct()}
+                                                                    </td>
+                                                                    <td th:utext="${productReultAdmin.getQuantity()}">
+                                                                        ${productReultAdmin.getQuantity()}
+                                                                    </td>
+                                                                    <td th:utext="${productReultAdmin.getPrice()}">
+                                                                        ${productReultAdmin.getPrice()}
+                                                                    </td>
+                                                                    <td><img class="imgPreview"
+                                                                             th:src="${productReultAdmin.getImgMain()}"
+                                                                             alt="" style="max-width: 50px"></td>
+                                                                    <td>
+                                                                        <button type="button" class="btn btn-primary"
+                                                                                id="${productReultAdmin.getProductId()}"
+                                                                                data-toggle="modal"
+                                                                                th:attr="data-target='#editModal'+${productReultAdmin.getProductId()}">
+                                                                            <i class="fas fa-edit"></i>Edit
+                                                                        </button>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button type="button" class="btn btn-danger"
+                                                                                th:id="${productReultAdmin.getProductId()}"
+                                                                                onclick="getID($(this).attr('id'))">
+                                                                            <i class="fas fa-trash-alt"></i> Delete
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
                                                                 <!-- Modal -->
-                                                                <div id="editModal${productReultAdmin.getProductId()}" class="modal fade" role="dialog">
+                                                                <div th:id="'editModal'+${productReultAdmin.getProductId()}"
+                                                                     class="modal fade" role="dialog">
                                                                     <div class="modal-dialog modal-lg">
 
                                                                         <!-- Modal content-->
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <button type="button" class="close"
+                                                                                        data-dismiss="modal">&times;
+                                                                                </button>
                                                                                 <h4 class="modal-title"></h4>
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <div class="col-md-12">
                                                                                     <div id="wizardb">
                                                                                         <section>
-                                                                                            <form class="wizard-form" id="formAddProduct${productReultAdmin.getProductId()}"
-                                                                                                <%--                                                                          verticle-wizard--%>
-                                                                                                  action="/editProduct" method="post">
+                                                                                            <form class="wizard-form"
+                                                                                                  id="formAddProduct${productReultAdmin.getProductId()}"
+
+                                                                                                  action="/editProduct"
+                                                                                                  method="post">
                                                                                                 <h3> Product Info </h3>
                                                                                                 <fieldset>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="password-2"
-                                                                                                                   class="block">Id *</label>
+                                                                                                            <label
+                                                                                                                    class="block">Id
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <input id="color-2b5${productReultAdmin.getProductId()}" value="${productReultAdmin.getProductId()}" name="ProductId"
+                                                                                                            <input id="color-2b5${productReultAdmin.getProductId()}"
+                                                                                                                   th:value="${productReultAdmin.getProductId()}"
+                                                                                                                   name="ProductId"
                                                                                                                    type="text"
-                                                                                                                   class="form-control " readonly>
+                                                                                                                   class="form-control "
+                                                                                                                   readonly>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="userName-2"
-                                                                                                                   class="block">Name Product
+                                                                                                            <label
+                                                                                                                    class="block">Name
+                                                                                                                Product
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="userName-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="nameProduct" type="text"
-                                                                                                                   class=" form-control" value="${productReultAdmin.getNameProduct()}">
+                                                                                                                   name="nameProduct"
+                                                                                                                   type="text"
+                                                                                                                   class=" form-control"
+                                                                                                                   th:value="${productReultAdmin.getProductName()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="email-2" class="block">Category
+                                                                                                            <label
+                                                                                                                    class="block">Category
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <select class="form-control required" name="categoryId">
+                                                                                                            <select class="form-control required"
+                                                                                                                    name="categoryId">
 
-                                                                                                                           var="categoryEdit">
 
-                                                                                                                    <option value="${categoryEdit.getCategoryID()}">${categoryEdit.getNameCategory()}</option>
-
+                                                                                                                    <th:block th:each="category : ${categorys}">
+                                                                                                                        <option th:value="${category.getCategoryId()}" th:utext="${category.getNameCategory()}">
+                                                                                                                            ${categoryEdit.getNameCategory()}
+                                                                                                                        </option>
+                                                                                                                    </th:block>
 
                                                                                                             </select>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="password-2"
-                                                                                                                   class="block">Color *</label>
+                                                                                                            <label
+                                                                                                                    class="block">Color
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <input id="color-2b${productReultAdmin.getProductId()}" name="colorProduct"
+                                                                                                            <input id="color-2b${productReultAdmin.getProductId()}"
+                                                                                                                   name="colorProduct"
                                                                                                                    type="text"
-                                                                                                                   class="form-control " >
+                                                                                                                   class="form-control ">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="confirm-2"
-                                                                                                                   class="block">Price*</label>
+                                                                                                            <label
+                                                                                                                    class="block">Price*</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="confirm-2b1${productReultAdmin.getProductId()}"
-                                                                                                                   name="priceProduct" type="text"
-                                                                                                                   class="form-control " value="${productReultAdmin.getPrice()}">
+                                                                                                                   name="priceProduct"
+                                                                                                                   type="text"
+                                                                                                                   class="form-control "
+                                                                                                                   th:value="${productReultAdmin.getPrice()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="confirm-2"
-                                                                                                                   class="block">Description*</label>
+                                                                                                            <label
+                                                                                                                    class="block">Description*</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <input value="${productReultAdmin.getDescription()}"
-                                                                                                                   name="descriptionProduct" type="text"
-                                                                                                                   class="form-control " >
+                                                                                                            <input th:value="${productReultAdmin.getDescription()}"
+                                                                                                                   name="descriptionProduct"
+                                                                                                                   type="text"
+                                                                                                                   class="form-control ">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </fieldset>
@@ -1473,18 +1320,23 @@
                                                                                                 <fieldset>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="name-2" class="block">IMG
-                                                                                                                Main *</label>
+                                                                                                            <label
+                                                                                                                    class="block">IMG
+                                                                                                                Main
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
-                                                                                                            <input id="imgInp${productReultAdmin.getProductId()}" name="imgProduct"
+                                                                                                            <input id="imgInp${productReultAdmin.getProductId()}"
+                                                                                                                   name="imgProduct"
                                                                                                                    type="text"
-                                                                                                                   class="form-control" value="${productReultAdmin.getImgMain()}">
+                                                                                                                   class="form-control"
+                                                                                                                   th:value="${productReultAdmin.getImgMain()}">
 
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
 
-                                                                                                            <img id="blah${productReultAdmin.getProductId()}" src="#"
+                                                                                                            <img id="blah${productReultAdmin.getProductId()}"
+                                                                                                                 src="#"
                                                                                                                  style="max-width: 350px"/>
                                                                                                         </div>
                                                                                                     </div>
@@ -1499,18 +1351,23 @@
                                                                                                     </script>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="name-2" class="block">IMG
-                                                                                                                Child 1 *</label>
+                                                                                                            <label
+                                                                                                                    class="block">IMG
+                                                                                                                Child 1
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
-                                                                                                            <input id="imgInp1${productReultAdmin.getProductId()}" name="imgProduct1"
+                                                                                                            <input id="imgInp1${productReultAdmin.getProductId()}"
+                                                                                                                   name="imgProduct1"
                                                                                                                    type="text"
-                                                                                                                   class="form-control" value="${productReultAdmin.getImg1()}">
+                                                                                                                   class="form-control"
+                                                                                                                   th:value="${productReultAdmin.getImg1()}">
 
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
 
-                                                                                                            <img id="blah1" src="#"
+                                                                                                            <img id="blah1"
+                                                                                                                 src="#"
                                                                                                                  style="max-width: 350px"/>
                                                                                                         </div>
                                                                                                     </div>
@@ -1526,18 +1383,23 @@
 
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="name-2" class="block">IMG
-                                                                                                                Child 2 *</label>
+                                                                                                            <label
+                                                                                                                    class="block">IMG
+                                                                                                                Child 2
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
-                                                                                                            <input id="imgInp2${productReultAdmin.getProductId()}" name="imgProduct2"
+                                                                                                            <input id="imgInp2${productReultAdmin.getProductId()}"
+                                                                                                                   name="imgProduct2"
                                                                                                                    type="text"
-                                                                                                                   class="form-control" value="${productReultAdmin.getImg2()}">
+                                                                                                                   class="form-control"
+                                                                                                                   th:value="${productReultAdmin.getImg2()}">
 
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
 
-                                                                                                            <img id="blah2${productReultAdmin.getProductId()}" src="#"
+                                                                                                            <img id="blah2${productReultAdmin.getProductId()}"
+                                                                                                                 src="#"
                                                                                                                  style="max-width: 350px"/>
                                                                                                         </div>
                                                                                                     </div>
@@ -1552,18 +1414,23 @@
                                                                                                     </script>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="name-2" class="block">IMG
-                                                                                                                Child 3 *</label>
+                                                                                                            <label
+                                                                                                                    class="block">IMG
+                                                                                                                Child 3
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
-                                                                                                            <input id="imgInp3${productReultAdmin.getProductId()}" name="imgProduct3"
+                                                                                                            <input id="imgInp3${productReultAdmin.getProductId()}"
+                                                                                                                   name="imgProduct3"
                                                                                                                    type="text"
-                                                                                                                   class="form-control" value="${productReultAdmin.getImg3()}">
+                                                                                                                   class="form-control"
+                                                                                                                   th:value="${productReultAdmin.getImg3()}">
 
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
 
-                                                                                                            <img id="blah3${productReultAdmin.getProductId()}" src="#"
+                                                                                                            <img id="blah3${productReultAdmin.getProductId()}"
+                                                                                                                 src="#"
                                                                                                                  style="max-width: 350px"/>
                                                                                                         </div>
                                                                                                     </div>
@@ -1578,18 +1445,23 @@
                                                                                                     </script>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="name-2" class="block">IMG
-                                                                                                                Child 4 *</label>
+                                                                                                            <label
+                                                                                                                    class="block">IMG
+                                                                                                                Child 4
+                                                                                                                *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
-                                                                                                            <input id="imgName${productReultAdmin.getProductId()}" name="imgProduct4"
+                                                                                                            <input id="imgName${productReultAdmin.getProductId()}"
+                                                                                                                   name="imgProduct4"
                                                                                                                    type="text"
-                                                                                                                   class="form-control" value="${productReultAdmin.getImg4()}">
+                                                                                                                   class="form-control"
+                                                                                                                   th:value="${productReultAdmin.getImg4()}">
 
                                                                                                         </div>
                                                                                                         <div class="col-sm-6">
 
-                                                                                                            <img id="imageHolder${productReultAdmin.getProductId()}" src="#"
+                                                                                                            <img id="imageHolder${productReultAdmin.getProductId()}"
+                                                                                                                 src="#"
                                                                                                                  style="max-width: 350px"/>
                                                                                                         </div>
                                                                                                     </div>
@@ -1603,105 +1475,128 @@
                                                                                                         });
                                                                                                     </script>
                                                                                                 </fieldset>
-                                                                                                <h3> Work experience </h3>
+
                                                                                                 <fieldset>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="Company-2"
-                                                                                                                   class="block">Quantity:</label>
+                                                                                                            <label
+                                                                                                                    class="block">Quantity:</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="Company-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="quantityProduct" type="number"
-                                                                                                                   class="form-control required" value="${productReultAdmin.getQuantity()}">
+                                                                                                                   name="quantityProduct"
+                                                                                                                   type="number"
+                                                                                                                   class="form-control required"
+                                                                                                                   th:value="${productReultAdmin.getQuantity()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="CountryW-2"
-                                                                                                                   class="block">Size S</label>
+                                                                                                            <label
+                                                                                                                    class="block">Size
+                                                                                                                S</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="CountryW-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="sizeSProduct" type="number"
-                                                                                                                   class="form-control required" value="${productReultAdmin.getSize_S()}">
+                                                                                                                   name="sizeSProduct"
+                                                                                                                   type="number"
+                                                                                                                   class="form-control required"
+                                                                                                                   th:value="${productReultAdmin.getSizeS()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="Position-2"
-                                                                                                                   class="block">Size M</label>
+                                                                                                            <label
+                                                                                                                    class="block">Size
+                                                                                                                M</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="Position-2b1${productReultAdmin.getProductId()}"
-                                                                                                                   name="sizeMProduct" type="number"
-                                                                                                                   class="form-control required" value="${productReultAdmin.getSize_M()}">
+                                                                                                                   name="sizeMProduct"
+                                                                                                                   type="number"
+                                                                                                                   class="form-control required"
+                                                                                                                   th:value="${productReultAdmin.getSizeM()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="Position-2"
-                                                                                                                   class="block">Size L</label>
+                                                                                                            <label
+                                                                                                                    class="block">Size
+                                                                                                                L</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="Position-2b2${productReultAdmin.getProductId()}"
-                                                                                                                   name="sizeLProduct" type="number"
-                                                                                                                   class="form-control required" value="${productReultAdmin.getSize_L()}">
+                                                                                                                   name="sizeLProduct"
+                                                                                                                   type="number"
+                                                                                                                   class="form-control required"
+                                                                                                                   th:value="${productReultAdmin.getSizeL()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="Position-2"
-                                                                                                                   class="block">Size XL</label>
+                                                                                                            <label
+                                                                                                                    class="block">Size
+                                                                                                                XL</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="Position-2b3${productReultAdmin.getProductId()}"
-                                                                                                                   name="sizeXLProduct" type="number"
-                                                                                                                   class="form-control required" value="${productReultAdmin.getSize_XL()}">
+                                                                                                                   name="sizeXLProduct"
+                                                                                                                   type="number"
+                                                                                                                   class="form-control required"
+                                                                                                                   th:value="${productReultAdmin.getSizeXl()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="Position-2"
-                                                                                                                   class="block">Size
+                                                                                                            <label
+                                                                                                                    class="block">Size
                                                                                                                 XXL</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="Position-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="sizeXXLProduct" type="number"
-                                                                                                                   class="form-control required" value="${productReultAdmin.getSize_XXL()}">
+                                                                                                                   name="sizeXXLProduct"
+                                                                                                                   type="number"
+                                                                                                                   class="form-control required"
+                                                                                                                   th:value="${productReultAdmin.getSizeXxl()}">
                                                                                                         </div>
                                                                                                     </div>
-                                                                                                    <input type="submit" id="submitForm${productReultAdmin.getProductId()}" class="btn btn-success" value="Update">
+                                                                                                    <input type="submit"
+                                                                                                           id="submitForm${productReultAdmin.getProductId()}"
+                                                                                                           class="btn btn-success"
+                                                                                                           value="Update">
                                                                                                 </fieldset>
                                                                                             </form>
 
                                                                                         </section>
                                                                                     </div>
                                                                                 </div>
-
                                                                             </div>
-<%--                                                                            <div class="modal-footer">--%>
-<%--                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-<%--                                                                            </div>--%>
-                                                                        </div>
 
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Close
+                                                                            </button>
+                                                                        </div>
                                                                     </div>
+
                                                                 </div>
 
 
+                                                            </th:block>
                                                             <script>
-                                                                function getID(idProduct){
+                                                                function getID(idProduct) {
                                                                     $.ajax({
-                                                                        url: '/deleteProduct?idProductDelete='+idProduct,
+                                                                        url: '/admin/deleteProduct?idProductDelete=' + idProduct,
                                                                         data: {
                                                                             format: 'json'
                                                                         },
-                                                                        error: function() {
+                                                                        error: function () {
                                                                             $('#info').html('<p>An error has occurred</p>');
                                                                         },
                                                                         dataType: 'jsonp',
-                                                                        success: function(data) {
+                                                                        success: function (data) {
                                                                             alert("ok");
                                                                         },
                                                                         type: 'GET'
@@ -1710,56 +1605,15 @@
                                                                 }
 
                                                             </script>
-<%--                                                            <tr>--%>
-<%--                                                                <td>Garrett Winters</td>--%>
-<%--                                                                <td>Accountant</td>--%>
-<%--                                                                <td>Tokyo</td>--%>
-<%--                                                                <td>63</td>--%>
-<%--                                                                <td>2011/07/25</td>--%>
-<%--                                                                <td>$170,750</td>--%>
-<%--                                                            </tr>--%>
-<%--                                                            <tr>--%>
-<%--                                                                <td>Ashton Cox</td>--%>
-<%--                                                                <td>Junior Technical Author</td>--%>
-<%--                                                                <td>San Francisco</td>--%>
-<%--                                                                <td>66</td>--%>
-<%--                                                                <td>2009/01/12</td>--%>
-<%--                                                                <td>$86,000</td>--%>
-<%--                                                            </tr>--%>
-<%--                                                            <tr>--%>
-<%--                                                                <td>Cedric Kelly</td>--%>
-<%--                                                                <td>Senior Javascript Developer</td>--%>
-<%--                                                                <td>Edinburgh</td>--%>
-<%--                                                                <td>22</td>--%>
-<%--                                                                <td>2012/03/29</td>--%>
-<%--                                                                <td>$433,060</td>--%>
-<%--                                                            </tr>--%>
-<%--                                                            <tr>--%>
-<%--                                                                <td>Airi Satou</td>--%>
-<%--                                                                <td>Accountant</td>--%>
-<%--                                                                <td>Tokyo</td>--%>
-<%--                                                                <td>33</td>--%>
-<%--                                                                <td>2008/11/28</td>--%>
-<%--                                                                <td>$162,700</td>--%>
-<%--                                                            </tr>--%>
-<%--                                                            <tr>--%>
-<%--                                                                <td>Brielle Williamson</td>--%>
-<%--                                                                <td>Integration Specialist</td>--%>
-<%--                                                                <td>New York</td>--%>
-<%--                                                                <td>61</td>--%>
-<%--                                                                <td>2012/12/02</td>--%>
-<%--                                                                <td>$372,000</td>--%>
-<%--                                                            </tr>--%>
-
                                                             </tbody>
                                                             <tfoot>
                                                             <tr>
-																<th>Name</th>
-																<th>Quantity</th>
-																<th>Price</th>
-																<th>Img Preview</th>
-																<th>Edit</th>
-																<th>Delete</th>
+                                                                <th>Name</th>
+                                                                <th>Quantity</th>
+                                                                <th>Price</th>
+                                                                <th>Img Preview</th>
+                                                                <th>Edit</th>
+                                                                <th>Delete</th>
                                                             </tr>
                                                             </tfoot>
                                                         </table>
@@ -3271,31 +3125,31 @@
         <ul class="iew-download">
             <li>
                 <a href="http://www.google.com/chrome/">
-                    <img src="admin/files/assets/images/browser/chrome.png" alt="Chrome">
+                    <img src="files/assets/images/browser/chrome.png" alt="Chrome">
                     <div>Chrome</div>
                 </a>
             </li>
             <li>
                 <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="admin/files/assets/images/browser/firefox.png" alt="Firefox">
+                    <img src="files/assets/images/browser/firefox.png" alt="Firefox">
                     <div>Firefox</div>
                 </a>
             </li>
             <li>
                 <a href="http://www.opera.com">
-                    <img src="admin/files/assets/images/browser/opera.png" alt="Opera">
+                    <img src="files/assets/images/browser/opera.png" alt="Opera">
                     <div>Opera</div>
                 </a>
             </li>
             <li>
                 <a href="https://www.apple.com/safari/">
-                    <img src="admin/files/assets/images/browser/safari.png" alt="Safari">
+                    <img src="files/assets/images/browser/safari.png" alt="Safari">
                     <div>Safari</div>
                 </a>
             </li>
             <li>
                 <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="admin/files/assets/images/browser/ie.png" alt="">
+                    <img src="files/assets/images/browser/ie.png" alt="">
                     <div>IE (9 & above)</div>
                 </a>
             </li>
@@ -3306,36 +3160,36 @@
 <![endif]-->
 
 
-<script type="text/javascript" src="admin/files/bower_components/jquery/js/jquery.min.js"></script>
-<script type="text/javascript" src="admin/files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="admin/files/bower_components/popper.js/js/popper.min.js"></script>
-<script type="text/javascript" src="admin/files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="files/bower_components/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="files/bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="files/bower_components/bootstrap/js/bootstrap.min.js"></script>
 
-<script src="admin/files/assets/pages/waves/js/waves.min.js"></script>
+<script src="files/assets/pages/waves/js/waves.min.js"></script>
 
-<script type="text/javascript" src="admin/files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
-<script type="text/javascript" src="admin/files/bower_components/modernizr/js/modernizr.js"></script>
-<script type="text/javascript" src="admin/files/bower_components/modernizr/js/css-scrollbars.js"></script>
+<script type="text/javascript" src="files/bower_components/modernizr/js/modernizr.js"></script>
+<script type="text/javascript" src="files/bower_components/modernizr/js/css-scrollbars.js"></script>
 
-<script src="admin/files/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="admin/files/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="admin/files/assets/pages/data-table/js/jszip.min.js"></script>
-<script src="admin/files/assets/pages/data-table/js/pdfmake.min.js"></script>
-<script src="admin/files/assets/pages/data-table/js/vfs_fonts.js"></script>
-<script src="admin/files/assets/pages/data-table/extensions/autofill/js/dataTables.autoFill.min.js"></script>
-<script src="admin/files/assets/pages/data-table/extensions/autofill/js/dataTables.select.min.js"></script>
-<script src="admin/files/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="admin/files/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="admin/files/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="admin/files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="admin/files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src="files/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="files/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="files/assets/pages/data-table/js/jszip.min.js"></script>
+<script src="files/assets/pages/data-table/js/pdfmake.min.js"></script>
+<script src="files/assets/pages/data-table/js/vfs_fonts.js"></script>
+<script src="files/assets/pages/data-table/extensions/autofill/js/dataTables.autoFill.min.js"></script>
+<script src="files/assets/pages/data-table/extensions/autofill/js/dataTables.select.min.js"></script>
+<script src="files/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="files/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="files/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
-<script src="admin/files/assets/pages/data-table/extensions/autofill/js/extensions-custom.js"></script>
-<script src="admin/files/assets/js/pcoded.min.js"></script>
-<script src="admin/files/assets/js/vertical/vertical-layout.min.js"></script>
-<script src="admin/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="admin/files/assets/js/script.js"></script>
+<script src="files/assets/pages/data-table/extensions/autofill/js/extensions-custom.js"></script>
+<script src="files/assets/js/pcoded.min.js"></script>
+<script src="files/assets/js/vertical/vertical-layout.min.js"></script>
+<script src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="files/assets/js/script.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>

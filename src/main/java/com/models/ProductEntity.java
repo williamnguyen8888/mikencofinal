@@ -7,7 +7,7 @@ import java.util.Objects;
 @Table(name = "product", schema = "mikencobrandnew", catalog = "")
 public class ProductEntity {
     private int productId;
-    private Integer categoryId;
+    private int categoryId;
     private int quantity;
     private int price;
     private String description;
@@ -17,11 +17,11 @@ public class ProductEntity {
     private String img2;
     private String img3;
     private String img4;
-    private Integer sizeS;
-    private Integer sizeM;
-    private Integer sizeL;
-    private Integer sizeXl;
-    private Integer sizeXxl;
+    private int sizeS;
+    private int sizeM;
+    private int sizeL;
+    private int sizeXl;
+    private int sizeXxl;
 
     @Id
     @Column(name = "productId")
@@ -35,11 +35,11 @@ public class ProductEntity {
 
     @Basic
     @Column(name = "categoryId")
-    public Integer getCategoryId() {
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -135,51 +135,51 @@ public class ProductEntity {
 
     @Basic
     @Column(name = "Size_S")
-    public Integer getSizeS() {
+    public int getSizeS() {
         return sizeS;
     }
 
-    public void setSizeS(Integer sizeS) {
+    public void setSizeS(int sizeS) {
         this.sizeS = sizeS;
     }
 
     @Basic
     @Column(name = "Size_M")
-    public Integer getSizeM() {
+    public int getSizeM() {
         return sizeM;
     }
 
-    public void setSizeM(Integer sizeM) {
+    public void setSizeM(int sizeM) {
         this.sizeM = sizeM;
     }
 
     @Basic
     @Column(name = "Size_L")
-    public Integer getSizeL() {
+    public int getSizeL() {
         return sizeL;
     }
 
-    public void setSizeL(Integer sizeL) {
+    public void setSizeL(int sizeL) {
         this.sizeL = sizeL;
     }
 
     @Basic
     @Column(name = "Size_XL")
-    public Integer getSizeXl() {
+    public int getSizeXl() {
         return sizeXl;
     }
 
-    public void setSizeXl(Integer sizeXl) {
+    public void setSizeXl(int sizeXl) {
         this.sizeXl = sizeXl;
     }
 
     @Basic
     @Column(name = "Size_XXL")
-    public Integer getSizeXxl() {
+    public int getSizeXxl() {
         return sizeXxl;
     }
 
-    public void setSizeXxl(Integer sizeXxl) {
+    public void setSizeXxl(int sizeXxl) {
         this.sizeXxl = sizeXxl;
     }
 
