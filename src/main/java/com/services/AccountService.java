@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 import java.util.List;
-
+@Transactional
 public class AccountService implements IAccountService {
     @Autowired
     private IAccountRepository iAccountRepositorys;
@@ -47,5 +48,18 @@ public class AccountService implements IAccountService {
     @Override
     public void delete(int id) {
         iAccountRepositorys.delete(id);
+    }
+
+    @Override
+    public void edit(AccountEntity accountEntity) {
+        if(accountEntity.getCustomerId() != 0){
+
+            entityManager.merge(accountEntity);
+
+        } else {
+
+            entityManager.persist(accountEntity);
+
+        }
     }
 }

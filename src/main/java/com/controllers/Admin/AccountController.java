@@ -14,14 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 
 @Controller
-@RequestMapping("/admin")
-public class AccountContreller {
+public class AccountController {
 
     @Autowired
     private ITypeOfAccountService typeOfAccountService;
     @Autowired
     private IAccountService accountService;
-    @GetMapping("/account")
+    @GetMapping("/admin/account")
     public ModelAndView accountAdmin() {
         ModelAndView modelAndView = new ModelAndView("/admin/html/resultListAccount");
         Iterable<AccountEntity> accountListAdmin = accountService.findAll();
@@ -29,17 +28,22 @@ public class AccountContreller {
         //load list roles
         ArrayList<TypeofaccountEntity> typeofaccountList = (ArrayList<TypeofaccountEntity>) typeOfAccountService.findAll();
         modelAndView.addObject("typeofaccountList",typeofaccountList);
-        modelAndView.addObject("account",new AccountEntity());
+        modelAndView.addObject("AccountEntity",new AccountEntity());
         return modelAndView;
     }
-    @GetMapping("/deleteaccount")
+    @GetMapping("/admin/deleteaccount")
     public String deleteAcount(@RequestParam int idaccount){
         accountService.delete(idaccount);
         return "redirect:/admin/account";
     }
-    @PostMapping("/CreateAccount")
-    public String createAccount(@ModelAttribute("account") AccountEntity accountEntity){
+    @PostMapping("/admin/createaccount")
+    public String createAccount(@ModelAttribute("AccountEntity") AccountEntity accountEntity){
         accountService.save(accountEntity);
+        return "redirect:/admin/account";
+    }
+    @PostMapping("/admin/editaccount")
+    public String updateAccount(@ModelAttribute("AccountEntity") AccountEntity accountEntity){
+        accountService.edit(accountEntity);
         return "redirect:/admin/account";
     }
 }

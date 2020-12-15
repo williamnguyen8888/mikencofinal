@@ -5,7 +5,7 @@
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
-    <title>Admindek | Admin Template</title>
+    <title>Admin | William Admin</title>
     <style>
         .imgPreview:hover {
             -ms-transform: scale(4.5); /* IE 9 */
@@ -58,6 +58,8 @@
 
     <link rel="stylesheet" type="text/css" href="files/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/pages.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
 
         .modal-body {
@@ -771,10 +773,10 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h5>List Product</h5>
-                                                    <button type="button" class="btn btn-primary"
+                                                    <button type="button" class="btn btn-success"
                                                             th:attr="data-target='#newaccount'"
-                                                            data-toggle="modal">
-                                                        New Account
+                                                            data-toggle="modal" style="float: right">
+                                                        <i class="fas fa-user-plus"></i> New Account
                                                     </button>
                                                     <!-- Modal -->
                                                     <div th:id="'newaccount'"
@@ -795,163 +797,146 @@
                                                                         <div id="wizardb">
                                                                             <section>
                                                                                 <form class="wizard-form"
-                                                                                      id="formAddProduct${productReultAdmin.getProductId()}"
-                                                                                     th:action="@{/account/CreateAccount}"
-                                                                                      th:object="${account}"
+                                                                                      th:action="@{/admin/createaccount}"
+                                                                                      th:object="${AccountEntity}"
                                                                                       method="post">
                                                                                     <h3> Product Info </h3>
-                                                                                    <fieldset>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="password-2"
-                                                                                                       class="block">customerId
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input
-                                                                                                       name="ProductId"
-                                                                                                       type="text"
-                                                                                                       class="form-control "
-                                                                                                       readonly>
-                                                                                            </div>
+
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">username
+                                                                                                *</label>
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="userName-2"
-                                                                                                       class="block">username
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="userName-2b${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{username}"
-                                                                                                       type="text"
-                                                                                                       class=" form-control"
-                                                                                                       >
-                                                                                            </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{username}"
+                                                                                                    type="text"
+                                                                                                    class=" form-control"
+                                                                                            >
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="userName-2"
-                                                                                                       class="block">password
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="userName-2b${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{password}"
-                                                                                                       type="text"
-                                                                                                       class=" form-control"
-                                                                                                >
-                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">password
+                                                                                                *</label>
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="password-2"
-                                                                                                       class="block">firstName
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="color-2b${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{firstName}"
-                                                                                                       type="text"
-                                                                                                       class="form-control "
-                                                                                                       >
-                                                                                            </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{password}"
+                                                                                                    type="password"
+                                                                                                    class=" form-control"
+                                                                                            >
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="password-2"
-                                                                                                       class="block">SurName
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="color-2b${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{surName}"
-                                                                                                       type="text"
-                                                                                                       class="form-control "
-                                                                                                      >
-                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">firstName
+                                                                                                *</label>
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="password-2"
-                                                                                                       class="block">birthDay
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="color-2b${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{birthDay}"
-                                                                                                       type="text"
-                                                                                                       class="form-control "
-                                                                                                       >
-                                                                                            </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{firstName}"
+                                                                                                    type="text"
+                                                                                                    class="form-control "
+                                                                                            >
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="confirm-2"
-                                                                                                       class="block">phoneNumber*</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="confirm-2b1${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{phoneNumber}"
-                                                                                                       type="text"
-                                                                                                       class="form-control "
-                                                                                                      >
-                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">SurName
+                                                                                                *</label>
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="confirm-2"
-                                                                                                       class="block">address*</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input
-                                                                                                        th:field="*{address}"
-                                                                                                       type="text"
-                                                                                                       class="form-control ">
-                                                                                            </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{surName}"
+                                                                                                    type="text"
+                                                                                                    class="form-control "
+                                                                                            >
                                                                                         </div>
-                                                                                    </fieldset>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">birthDay
+                                                                                                *</label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{birthDay}"
+                                                                                                    type="date"
+                                                                                                    class="form-control "
+                                                                                            >
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">phoneNumber*</label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{phoneNumber}"
+                                                                                                    type="number"
+                                                                                                    class="form-control "
+                                                                                            >
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">address*</label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{address}"
+                                                                                                    type="text"
+                                                                                                    class="form-control ">
+                                                                                        </div>
+                                                                                    </div>
 
 
-                                                                                    <fieldset>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="Company-2"
-                                                                                                       class="block">email:</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <input id="Company-2b${productReultAdmin.getProductId()}"
-                                                                                                       th:field="*{email}"
-                                                                                                       type="text"
-                                                                                                       class="form-control required"
-                                                                                                       >
-                                                                                            </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">email:</label>
                                                                                         </div>
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label for="email-2"
-                                                                                                       class="block">Category
-                                                                                                    *</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <select class="form-control required" th:field="*{typeAccountId}">
+                                                                                        <div class="col-sm-12">
+                                                                                            <input
+                                                                                                    th:field="*{email}"
+                                                                                                    type="text"
+                                                                                                    class="form-control required"
+                                                                                            >
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-12">
+                                                                                            <label
+                                                                                                    class="block">Roles
+                                                                                                *</label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-12">
+                                                                                            <select class="form-control required"
+                                                                                                    th:field="*{typeAccountId}">
 
-                                                                                                    <th:block
-                                                                                                            th:each="typeOfAccount : ${typeofaccountList}">
-                                                                                                        <option
-                                                                                                                th:value="${typeOfAccount.getTypeAccountId()}"
-                                                                                                                th:text="${typeOfAccount.getTypeOfAccount()}">
-                                                                                                            Address
-                                                                                                        </option>
-                                                                                                    </th:block>
-                                                                                                </select>
-                                                                                            </div>
+                                                                                                <th:block
+                                                                                                        th:each="typeOfAccount : ${typeofaccountList}">
+                                                                                                    <option
+                                                                                                            th:value="${typeOfAccount.getTypeAccountId()}"
+                                                                                                            th:text="${typeOfAccount.getTypeOfAccount()}">
+                                                                                                        Address
+                                                                                                    </option>
+                                                                                                </th:block>
+                                                                                            </select>
                                                                                         </div>
-                                                                                        <input type="submit"
-                                                                                               id="submitForm${productReultAdmin.getProductId()}"
-                                                                                               class="btn btn-success"
-                                                                                               value="Update">
-                                                                                    </fieldset>
+                                                                                    </div>
+                                                                                    <input type="submit"
+                                                                                           class="btn btn-success"
+                                                                                           value="Add New">
+
                                                                                 </form>
 
                                                                             </section>
@@ -1015,14 +1000,14 @@
                                                                                 data-toggle="modal"
 
                                                                         >
-                                                                            Edit
+                                                                            <i class="fas fa-trash-alt"></i>Edit
                                                                         </button>
                                                                     </td>
                                                                     <td>
                                                                         <button type="button" class="btn btn-danger"
                                                                                 th:id="${account.getCustomerId()}"
                                                                                 onclick="getID($(this).attr('id'))">
-                                                                            Delete
+                                                                            <i class="fas fa-edit"></i>Delete
                                                                         </button>
                                                                     </td>
                                                                 </tr>
@@ -1046,20 +1031,22 @@
                                                                                         <section>
                                                                                             <form class="wizard-form"
                                                                                                   id="formAddProduct${productReultAdmin.getProductId()}"
-                                                                                                  action="/editProduct"
+                                                                                                  th:action="@{/admin/editaccount}"
+                                                                                                  th:object="${AccountEntity}"
                                                                                                   method="post">
-                                                                                                <h3> Product Info </h3>
+                                                                                                <h3> Add New
+                                                                                                    Account </h3>
                                                                                                 <fieldset>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="password-2"
-                                                                                                                   class="block">customerId
+                                                                                                            <label
+                                                                                                                    class="block">customerId
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input th:id="${account.getCustomerId()}"
                                                                                                                    th:value="${account.getCustomerId()}"
-                                                                                                                   name="ProductId"
+                                                                                                                   th:name="customerId"
                                                                                                                    type="text"
                                                                                                                    class="form-control "
                                                                                                                    readonly>
@@ -1067,28 +1054,42 @@
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="userName-2"
-                                                                                                                   class="block">username
+                                                                                                            <label
+                                                                                                                    class="block">username
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="userName-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="nameProduct"
+                                                                                                                   th:name="username"
                                                                                                                    type="text"
                                                                                                                    class=" form-control"
                                                                                                                    th:value="${account.getUsername()}">
                                                                                                         </div>
                                                                                                     </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <div class="col-sm-12">
+                                                                                                            <label
+                                                                                                                    class="block">password
+                                                                                                                *</label>
+                                                                                                        </div>
+                                                                                                        <div class="col-sm-12">
+                                                                                                            <input id="userName-2b${productReultAdmin.getProductId()}"
+                                                                                                                   th:name="password"
+                                                                                                                   type="password"
+                                                                                                                   class=" form-control"
+                                                                                                                   th:value="${account.getPassword()}">
+                                                                                                        </div>
+                                                                                                    </div>
 
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="password-2"
-                                                                                                                   class="block">firstName
+                                                                                                            <label
+                                                                                                                    class="block">firstName
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="color-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="colorProduct"
+                                                                                                                   th:name="firstName"
                                                                                                                    type="text"
                                                                                                                    class="form-control "
                                                                                                                    th:value="${account.getFirstName()}">
@@ -1096,53 +1097,53 @@
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="password-2"
-                                                                                                                   class="block">SurName
+                                                                                                            <label
+                                                                                                                    class="block">SurName
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <input id="color-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="colorProduct"
-                                                                                                                   type="text"
-                                                                                                                   class="form-control "
-                                                                                                                   th:value="${account.getSurName()}">
+                                                                                                            <input
+                                                                                                                    th:name="surName"
+                                                                                                                    type="text"
+                                                                                                                    class="form-control "
+                                                                                                                    th:value="${account.getSurName()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="password-2"
-                                                                                                                   class="block">birthDay
+                                                                                                            <label
+                                                                                                                    class="block">birthDay
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <input id="color-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="colorProduct"
-                                                                                                                   type="text"
-                                                                                                                   class="form-control "
-                                                                                                                   th:value="${account.getBirthDay()}">
+                                                                                                            <input
+                                                                                                                    th:name="birthDay"
+                                                                                                                    type="date"
+                                                                                                                    class="form-control "
+                                                                                                                    th:value="${account.getBirthDay()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="confirm-2"
-                                                                                                                   class="block">phoneNumber*</label>
+                                                                                                            <label
+                                                                                                                    class="block">phoneNumber*</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="confirm-2b1${productReultAdmin.getProductId()}"
-                                                                                                                   name="priceProduct"
-                                                                                                                   type="text"
+                                                                                                                   th:name="phoneNumber"
+                                                                                                                   type="number"
                                                                                                                    class="form-control "
                                                                                                                    th:value="${account.getPhoneNumber()}">
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="confirm-2"
-                                                                                                                   class="block">address*</label>
+                                                                                                            <label
+                                                                                                                    class="block">address*</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input th:value="${account.getAddress()}"
-                                                                                                                   name="descriptionProduct"
+                                                                                                                   th:name="address"
                                                                                                                    type="text"
                                                                                                                    class="form-control ">
                                                                                                         </div>
@@ -1153,12 +1154,12 @@
                                                                                                 <fieldset>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="Company-2"
-                                                                                                                   class="block">email:</label>
+                                                                                                            <label
+                                                                                                                    class="block">email:</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
                                                                                                             <input id="Company-2b${productReultAdmin.getProductId()}"
-                                                                                                                   name="quantityProduct"
+                                                                                                                   th:name="email"
                                                                                                                    type="text"
                                                                                                                    class="form-control required"
                                                                                                                    th:value="${account.getEmail()}">
@@ -1166,12 +1167,12 @@
                                                                                                     </div>
                                                                                                     <div class="form-group row">
                                                                                                         <div class="col-sm-12">
-                                                                                                            <label for="email-2"
-                                                                                                                   class="block">Category
+                                                                                                            <label
+                                                                                                                    class="block">Category
                                                                                                                 *</label>
                                                                                                         </div>
                                                                                                         <div class="col-sm-12">
-                                                                                                            <select class="form-control required">
+                                                                                                            <select class="form-control required" th:name="typeAccountId">
                                                                                                                 <option th:value="${account.getTypeAccountId()}"
                                                                                                                         th:utext="${account.getTypeAccountId()}"></option>
                                                                                                                 <th:block
