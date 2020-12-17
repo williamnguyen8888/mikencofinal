@@ -72,7 +72,7 @@ public class CartController {
                 return "redirect:/";
             }else {
                 iCartService.cartAddToDB(productListCart,idCustomer);
-                return "redirect:/product";
+                return "checkoutDone";
             }
         }
 
