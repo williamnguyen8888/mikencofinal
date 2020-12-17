@@ -413,8 +413,9 @@
 
                                     <!-- Actions -->
                                     <div class="actions kw-actions">
-                                        <a href="#" rel="nofollow" data-product_id="" data-product_sku=""
+                                        <a href="javascript:;" th:id="${product.getProductId()}" onclick="getID($(this).attr('id'))" rel="nofollow" data-product_id="" data-product_sku=""
                                            data-quantity="1">
+
                                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="32"
                                                  viewBox="0 0 28 32">
                                                 <path class="svg-cart-icon"
@@ -432,7 +433,21 @@
                             <!--/ Product #1 -->
                         </th:block>
 
-
+                        <script>
+                            var dataSourceCart = [];
+                            function getID(idProduct) {
+                                $.ajax({
+                                    type: 'GET',
+                                    url: '/addToCart?idProduct=' + idProduct,
+                                    data: {get_param: 'value'},
+                                    success: function (data) {
+                                        console.log(data);
+                                        dataSourceCart = data;
+                                    }
+                                });
+                                location.reload();
+                            }
+                        </script>
                     </ul>
                     <!--/ Products list -->
                 </div>

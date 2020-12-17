@@ -1,5 +1,5 @@
 <!doctype html>
-<html dir="ltr" lang="en-US" class="no-js">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 	<!-- meta -->
@@ -1003,17 +1003,18 @@
 											</tr>
 										</thead>
 										<tbody>
+										<th:block th:each="productCart : ${productListCart}">
 											<tr class="cart_item">
 												<td class="product-remove">
 													<a href="#" class="remove" title="Remove this item" data-product_id="22" data-product_sku="">×</a>
 												</td>
 												<td class="product-thumbnail">
 													<a href="#">
-														<img src="images/_shop/small1.jpg" class="" alt="Kallyas Product" title="Kallyas Produc" />
+														<img th:src="${productCart.getImgMain()}" class="" alt="Kallyas Product" title="Kallyas Produc" />
 													</a>
 												</td>
 												<td class="product-name">
-													<a href="#">Natural fox fur collar</a>
+													<a href="#" th:utext="${productCart.getProductName()}">Natural fox fur collar</a>
 													<dl class="variation">
 														<dt class="variation-color">color:</dt>
 														<dd class="variation-color">
@@ -1024,7 +1025,7 @@
 													</dl>
 												</td>
 												<td class="product-price">
-													<span class="amount">£219.00</span>
+													<span class="amount" th:text="${productCart.getPrice()}">£219.00</span>
 												</td>
 												<td class="product-quantity">
 													<div class="quantity">
@@ -1032,50 +1033,13 @@
 													</div>
 												</td>
 												<td class="product-subtotal">
-													<span class="amount">
+													<span class="amount" th:text="${productCart.getPrice()}">
 														£219.00
 													</span>
 												</td>
 											</tr>
+										</th:block>
 
-											<tr class="cart_item">
-												<td class="product-remove">
-													<a href="#" class="remove" title="Remove this item" data-product_id="40" data-product_sku="">×</a>
-												</td>
-												<td class="product-thumbnail">
-													<a href="#">
-														<img src="images/_shop/small2.jpg" class="" alt="Kallyas Product" title="Kallyas Product" />
-													</a>
-												</td>
-												<td class="product-name">
-													<a href="#">
-														Natural fox fur collar
-													</a>
-													<dl class="variation">
-														<dt class="variation-color">color:</dt>
-														<dd class="variation-color">
-															<p>
-																Gray
-															</p>
-														</dd>
-													</dl>
-												</td>
-												<td class="product-price">
-													<span class="amount">
-														£100.00
-													</span>
-												</td>
-												<td class="product-quantity">
-													<div class="quantity">
-														<input type="number" step="1" min="0" name="cart[f90fb4a57d5d5d1480de46a571944e59][qty]" value="1" title="Qty" class="input-text qty text" size="4">
-													</div>
-												</td>
-												<td class="product-subtotal">
-													<span class="amount">
-														£210.00
-													</span>
-												</td>
-											</tr>
 											<tr>
 												<td colspan="6" class="actions">
 													<div class="coupon">

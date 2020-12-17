@@ -177,7 +177,7 @@
                                 <div class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="files/assets/images/avatar-4.jpg" class="img-radius"
                                          alt="User-Profile-Image">
-                                    <span>John Doe</span>
+                                    <span th:utext="${session.username}!=null?${session.username}:'Login'">John Doe</span>
                                     <i class="feather icon-chevron-down"></i>
                                 </div>
                                 <ul class="show-notification profile-notification dropdown-menu"
@@ -740,7 +740,7 @@
                                 <div class="page-header-title">
                                     <i class="feather icon-server bg-c-blue"></i>
                                     <div class="d-inline">
-                                        <h5>AutoFill DataTable</h5>
+                                        <h5>Product Manage</h5>
                                         <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                                     </div>
                                 </div>
@@ -753,7 +753,7 @@
                                         </li>
                                         <li class="breadcrumb-item"><a href="#!">Data Table</a>
                                         </li>
-                                        <li class="breadcrumb-item"><a href="#!">AutoFill Initialization</a>
+                                        <li class="breadcrumb-item"><a href="#!">Product Manage</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -1617,7 +1617,6 @@
                                                                     });
                                                                     location.reload();
                                                                 }
-
                                                             </script>
                                                             </tbody>
                                                             <tfoot>

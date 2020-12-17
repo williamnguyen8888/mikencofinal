@@ -101,7 +101,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/mikencobrandnew");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/mikencobrandnew?useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("tuananhdeptrai");
         return dataSource;
@@ -161,5 +161,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
     @Bean
     public ITypeOfAccountService TypeOfAccountService() {
         return new TypeOfAccountService();
+    }
+    @Bean
+    public ICartService CartService() {
+        return new CartService();
     }
 }

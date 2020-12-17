@@ -25,6 +25,7 @@ public class LoginController {
             return "khongloginduoc";
         }
         session.setAttribute("username", accountEntity.getUsername());
+        session.setAttribute("idCustomer", accountEntity.getCustomerId());
         return "redirect:/";
     }
 }
