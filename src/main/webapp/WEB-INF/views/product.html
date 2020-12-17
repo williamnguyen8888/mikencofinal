@@ -432,7 +432,6 @@
                             </li>
                             <!--/ Product #1 -->
                         </th:block>
-
                         <script>
                             var dataSourceCart = [];
                             function getID(idProduct) {
@@ -450,8 +449,44 @@
                         </script>
                     </ul>
                     <!--/ Products list -->
+                    <div aria-label="Page example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" th:href="@{'/product'(page=${products.number - 1})}" th:if="${products.hasPrevious()}">Previous</a></li>
+
+                            <li th:each="item : ${products.getTotalPages()}" class="page-item">
+                                <a class="page-link" th:utext="${item}">${item}</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" th:href="@{'/product'(page=${products.number + 1})}" th:if="${products.hasNext()}">Next</a></li>
+                        </ul>
+                    </div>
                 </div>
+<!--                <div class="table-pagination">-->
+<!--                    <ul class="pagination">-->
+<!--                        <li th:class="${products.number eq 0} ? 'disabled' : ''">-->
+<!--                            <a th:if="${not products.firstPage}" th:href="@{${'/product'}(page=${products.number-1},size=${products.size})}">Previous</a>-->
+<!--                            <a th:if="${products.firstPage}" href="javascript:void(0);">Previous</a>-->
+<!--                        </li>-->
+
+<!--                        <li th:each="pageNo : ${#numbers.sequence(0, products.totalPages - 1)}" th:class="${products.number eq pageNo}? 'active' : ''">-->
+<!--                            <a th:if="${products.number  eq pageNo}" href="javascript:void(0);">-->
+<!--                                <span th:text="${pageNo + 1}"></span>-->
+<!--                            </a>-->
+<!--                            <a th:if="${not (products.number  eq pageNo)}" th:href="@{${'/product'}(page=${pageNo},size=${products.size})}">-->
+<!--                                <span th:text="${pageNo + 1}"></span>-->
+<!--                            </a>-->
+
+<!--                        </li>-->
+<!--                        <li th:class="${products.number + 1 ge products.totalPages} ? 'disabled' : ''">-->
+<!--                            <a th:if="${not products.lastPage}" th:href="@{${'/product'}(page=${products.number+1},size=${products.size})}">Next</a>-->
+<!--                            <a th:if="${products.lastPage}" href="javascript:void(0);">Next</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
                 <!--/ Content with left sidebar col-sm-12 col-md-12 col-lg-9 order-lg-1 -->
+
+
+
+
 
                 <!-- Sidebar left -->
                 <div class="col-sm-12 col-md-12 col-lg-3">

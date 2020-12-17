@@ -24,6 +24,12 @@ public class ProductService implements IProductService {
         return iProductRepository.findAll();
     }
 
+
+    @Override
+    public Page<ProductEntity> finAll(Pageable pageable, int offset) {
+        return iProductRepository.findAll(new PageRequest(offset,8));
+    }
+
     @Override
     public ProductEntity finById(int id) {
         return iProductRepository.findOne(id);
