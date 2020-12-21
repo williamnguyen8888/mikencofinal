@@ -4,6 +4,7 @@ package com;
 //import com.vn.services.IProductService;
 //import com.vn.services.ProductService;
 
+import com.AspectJ.Logger;
 import com.services.*;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +13,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -41,6 +43,7 @@ import java.util.Properties;
 @EnableSpringDataWebSupport
 @EnableJpaRepositories("com.repositorys")
 @ComponentScan("com.controllers")
+@EnableAspectJAutoProxy
 public class WebAppConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
     private ApplicationContext applicationContext;
 
@@ -167,5 +170,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
     @Bean
     public ICartService CartService() {
         return new CartService();
+    }
+    @Bean
+    public Logger logger() {
+        return new Logger();
     }
 }

@@ -14,7 +14,7 @@ public class OrdersEntity {
 
     @Id
     @Column(name = "orderId")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     public int getOrderId() {
         return orderId;
     }

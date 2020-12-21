@@ -492,7 +492,10 @@
                                                     <!--                                                    Company</a>-->
                                                     <ul class="clearfix">
                                                         <th:block th:each="category : ${category}">
-                                                            <li style="float: left" class="col-sm-3"><a th:href="'product?categoryid='+${category.getCategoryId()}" th:text="${category.getNameCategory()}">ALL COLLECTION</a></li>
+                                                            <li style="float: left" class="col-sm-3"><a
+                                                                    th:href="'product?categoryid='+${category.getCategoryId()}"
+                                                                    th:text="${category.getNameCategory()}">ALL
+                                                                COLLECTION</a></li>
                                                         </th:block>
                                                     </ul>
                                                 </li>
@@ -559,16 +562,19 @@
                                         <div class="inner cart-container">
                                             <div class="widget_shopping_cart_content">
                                                 <ul class="cart_list product_list_widget ">
-                                                    <li>
-                                                        <a href="#" class="remove" title="Remove this item">×</a>
-                                                        <a href="#" class="product-title">
-                                                            <img src="http://mikenco.vn/wp-content/uploads/2020/10/web-tiger-.jpg"
-                                                                 alt="Kallyas Product" title="Kallyas Product"/>Galaxy
-                                                            Tiger
-                                                        </a>
-                                                        <span class="color-variations">Grej</span>
-                                                        <span class="quantity">1 × <span class="amount">1.000.000</span></span>
-                                                    </li>
+                                                    <div id="cart_content">
+                                                        <li>
+                                                            <a href="#" class="remove" title="Remove this item">×</a>
+                                                            <a href="#" class="product-title">
+                                                                <img src="http://mikenco.vn/wp-content/uploads/2020/10/web-tiger-.jpg"
+                                                                     alt="Kallyas Product" title="Kallyas Product"/>Galaxy
+                                                                Tiger
+                                                            </a>
+                                                            <span class="color-variations">Grej</span>
+                                                            <span class="quantity">1 × <span
+                                                                    class="amount">1.000.000</span></span>
+                                                        </li>
+                                                    </div>
                                                 </ul>
                                                 <!-- end product list -->
                                                 <p class="total">
@@ -1964,36 +1970,35 @@
                     <!--/ Title element -->
                 </div>
                 <!--/ col-sm-12 col-md-12 -->
-<th:block  th:each="categoryLimit : ${categoryLimit}">
-    <div class="col-sm-12 col-md-6 col-lg-4">
-        <!-- Image boxes style 4 element - bottom title -->
-        <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
-            <!-- Image box link wrapper -->
-            <a th:href="'product?categoryid='+${categoryLimit.getCategoryId()}" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
-                <!-- Image -->
-                <img th:src="${categoryLimit.getImgCategory()}"
-                     class="img-fluid imgbox_image cover-fit-img"
-                     alt="CLOTHING" title="CLOTHING"/>
-                <!--/ Image -->
+                <th:block th:each="categoryLimit : ${categoryLimit}">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- Image boxes style 4 element - bottom title -->
+                        <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
+                            <!-- Image box link wrapper -->
+                            <a th:href="'product?categoryid='+${categoryLimit.getCategoryId()}" target="_self"
+                               class="imgboxes4_link imgboxes-wrapper" title="">
+                                <!-- Image -->
+                                <img th:src="${categoryLimit.getImgCategory()}"
+                                     class="img-fluid imgbox_image cover-fit-img"
+                                     alt="CLOTHING" title="CLOTHING"/>
+                                <!--/ Image -->
 
-                <!-- Border helper -->
-                <span class="imgboxes-border-helper"></span>
-                <!--/ Border helper -->
+                                <!-- Border helper -->
+                                <span class="imgboxes-border-helper"></span>
+                                <!--/ Border helper -->
 
-                <!-- Title -->
-                <h3 class="m_title imgboxes-title" th:utext="${categoryLimit.getNameCategory()}">
+                                <!-- Title -->
+                                <h3 class="m_title imgboxes-title" th:utext="${categoryLimit.getNameCategory()}">
 
-                </h3>
-                <!--/ Title -->
-            </a>
-            <!--/ Image box link wrapper -->
-        </div>
-        <!--/ Image boxes style 4 element - bottom title -->
-    </div>
-    <!--/ col-sm-12 col-md-6 col-lg-4 -->
-</th:block>
-
-
+                                </h3>
+                                <!--/ Title -->
+                            </a>
+                            <!--/ Image box link wrapper -->
+                        </div>
+                        <!--/ Image boxes style 4 element - bottom title -->
+                    </div>
+                    <!--/ col-sm-12 col-md-6 col-lg-4 -->
+                </th:block>
 
 
                 <div class="col-sm-12 col-md-6 col-lg-4 align-self-center">
@@ -2082,79 +2087,81 @@
 											}'>
                                             <!-- Product  -->
                                             <th:block th:each="productRandom : ${productEntitieRandom}">
-                                            <li>
-                                                <div class="product-list-item prod-layout-classic">
-                                                    <!-- Badge container -->
-                                                    <div class="hg_badge_container">
-                                                        <span class="hg_badge_sale">SALE!</span>
-                                                        <span class="hg_badge_new">NEW!</span>
-                                                    </div>
-                                                    <!--/ Badge container -->
+                                                <li>
+                                                    <div class="product-list-item prod-layout-classic">
+                                                        <!-- Badge container -->
+                                                        <div class="hg_badge_container">
+                                                            <span class="hg_badge_sale">SALE!</span>
+                                                            <span class="hg_badge_new">NEW!</span>
+                                                        </div>
+                                                        <!--/ Badge container -->
 
-                                                    <!-- Product container link -->
-                                                    <a th:href="'/productdetail?idproduct='+${productRandom.getProductId()}">
-                                                        <!-- Image wrapper -->
-                                                        <span class="image kw-prodimage">
+                                                        <!-- Product container link -->
+                                                        <a th:href="'/productdetail?idproduct='+${productRandom.getProductId()}">
+                                                            <!-- Image wrapper -->
+                                                            <span class="image kw-prodimage">
 																<!-- Primary image -->
 																<img th:src="${productRandom.getImgMain()}"
                                                                      class="kw-prodimage-img" alt="Kallyas Product"
                                                                      title="Kallyas Product"/>
 
-                                                            <!-- Secondary image -->
+                                                                <!-- Secondary image -->
 																<img th:src="${productRandom.getImg1()}"
                                                                      class="kw-prodimage-img-secondary"
                                                                      alt="Kallyas Product" title="Kallyas Product"/>
 															</span>
-                                                        <!--/ Image wrapper -->
+                                                            <!--/ Image wrapper -->
 
-                                                        <!-- Details -->
-                                                        <div class="details kw-details fixclear">
-                                                            <!-- Title -->
-                                                            <h3 class="kw-details-title" th:utext="${productRandom.getProductName()}">
-                                                                GALAXY TIGER
-                                                            </h3>
+                                                            <!-- Details -->
+                                                            <div class="details kw-details fixclear">
+                                                                <!-- Title -->
+                                                                <h3 class="kw-details-title"
+                                                                    th:utext="${productRandom.getProductName()}">
+                                                                    GALAXY TIGER
+                                                                </h3>
 
-                                                            <!-- Price -->
-                                                            <span class="price">
+                                                                <!-- Price -->
+                                                                <span class="price">
 																	<del data-was="WAS">
-																		<span class="amount" th:utext="${productRandom.getPrice()}">1.000.000đ</span>
+																		<span class="amount"
+                                                                              th:utext="${productRandom.getPrice()}">1.000.000đ</span>
 																	</del>
 																	<ins data-now="NOW">
 																		<span class="amount">800.000đ</span>
 																	</ins>
 																</span>
-                                                            <!--/ Price -->
+                                                                <!--/ Price -->
 
-                                                            <!-- Star rating -->
-                                                            <div class="star-rating" title="Rated 5 out of 5">
+                                                                <!-- Star rating -->
+                                                                <div class="star-rating" title="Rated 5 out of 5">
 																	<span style="width:100%">
 																		<strong class="rating">5</strong> out of 5
 																	</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <!--/ details fixclear -->
-                                                    </a>
-                                                    <!-- Product container link -->
+                                                            <!--/ details fixclear -->
+                                                        </a>
+                                                        <!-- Product container link -->
 
-                                                    <!-- Actions -->
-                                                    <div class="actions kw-actions">
-                                                        <a href="#" class="shopping-cart" rel="nofollow"
-                                                           data-product_id="" data-product_sku="" data-quantity="1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="28"
-                                                                 height="32" viewBox="0 0 28 32">
-                                                                <path class="svg-cart-icon"
-                                                                      d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="product-detail.html">
-                                                            <span class="more-icon fas fa-compress"></span>
-                                                        </a>
+                                                        <!-- Actions -->
+                                                        <div class="actions kw-actions">
+                                                            <a href="#" class="shopping-cart" rel="nofollow"
+                                                               data-product_id="" data-product_sku="" data-quantity="1">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                                                     height="32" viewBox="0 0 28 32">
+                                                                    <path class="svg-cart-icon"
+                                                                          d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
+                                                                </svg>
+                                                            </a>
+                                                            <a href="product-detail.html">
+                                                                <span class="more-icon fas fa-compress"></span>
+                                                            </a>
+                                                        </div>
+                                                        <!--/ Actions -->
                                                     </div>
-                                                    <!--/ Actions -->
-                                                </div>
-                                                <!--/ product-list-item -->
-                                            </li>
-                                            <!--/ Product -->
+                                                    <!--/ product-list-item -->
+                                                </li>
+                                                <!--/ Product -->
                                             </th:block>
                                         </ul>
                                         <!--/ Featured products list -->

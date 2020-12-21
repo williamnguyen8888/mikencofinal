@@ -40,7 +40,7 @@ public class CartController {
 
     @ResponseBody
     @GetMapping("/addToCart")
-    public ArrayList<ProductEntity> addProductToCart(@RequestParam(required = false) int idProduct, HttpServletRequest request) {
+    public ProductEntity addProductToCart(@RequestParam(required = false) int idProduct, HttpServletRequest request) {
         HttpSession session = request.getSession(); // create session
         ProductEntity productCart = iProductService.finById(idProduct);
         ArrayList<ProductEntity> productListCart = (ArrayList<ProductEntity>) session.getAttribute("productListCart");
@@ -57,7 +57,7 @@ public class CartController {
 //        response.setContentType("application/json");
 //        response.setCharacterEncoding("UTF-8");
         System.out.println(productListCart.size());
-        return productListCart;
+        return productCart;
     }
 
     @GetMapping("/addCartDB")
@@ -88,4 +88,5 @@ public class CartController {
         }
         return products;
     }
+
 }

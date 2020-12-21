@@ -4,6 +4,7 @@ import com.models.AccountEntity;
 import com.models.LoginEntity;
 import com.services.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,7 +20,7 @@ public class LoginController {
     @Autowired
     private IAccountService iAccountServices;
     @PostMapping()
-    public String login(@ModelAttribute("loginEntity") LoginEntity loginEntity, HttpSession session, Model model){
+    public String login(@ModelAttribute("loginEntity") LoginEntity loginEntity, HttpSession session,HttpServletRequest request){
         AccountEntity accountEntity = iAccountServices.checkLogin(loginEntity);
         if (accountEntity == null) {
             return "khongloginduoc";

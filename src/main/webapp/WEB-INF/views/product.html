@@ -150,6 +150,8 @@
 
     <!-- jQuery Library -->
     <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body class="kl-store-page preloader">
@@ -413,7 +415,9 @@
 
                                     <!-- Actions -->
                                     <div class="actions kw-actions">
-                                        <a href="javascript:;" th:id="${product.getProductId()}" onclick="getID($(this).attr('id'))" rel="nofollow" data-product_id="" data-product_sku=""
+                                        <a href="javascript:;" th:id="${product.getProductId()}"
+                                           onclick="addToCart($(this).attr('id'))" rel="nofollow" data-product_id=""
+                                           data-product_sku=""
                                            data-quantity="1">
 
                                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="32"
@@ -432,60 +436,55 @@
                             </li>
                             <!--/ Product #1 -->
                         </th:block>
-                        <script>
-                            var dataSourceCart = [];
-                            function getID(idProduct) {
-                                $.ajax({
-                                    type: 'GET',
-                                    url: '/addToCart?idProduct=' + idProduct,
-                                    data: {get_param: 'value'},
-                                    success: function (data) {
-                                        console.log(data);
-                                        dataSourceCart = data;
-                                    }
-                                });
-                                location.reload();
-                            }
-                        </script>
                     </ul>
-                    <!--/ Products list -->
-                    <div aria-label="Page example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" th:href="@{'/product'(page=${products.number - 1})}" th:if="${products.hasPrevious()}">Previous</a></li>
+<!--                    Products list -->
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination">
+                                                <li class="page-item"><a class="page-link" th:href="@{'/product'(page=${products.number - 1})}" th:if="${products.hasPrevious()}">Previous</a></li>
 
-                            <li th:each="item : ${products.getTotalPages()}" class="page-item">
-                                <a class="page-link" th:utext="${item}">${item}</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" th:href="@{'/product'(page=${products.number + 1})}" th:if="${products.hasNext()}">Next</a></li>
-                        </ul>
-                    </div>
+                                                <li th:each="pageNumber : ${pageNumbers}" class="page-item">
+                                                    <a class="page-link" th:href="@{'/product'(page=${pageNumber})}" th:utext="${pageNumber}+1">${item}</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" th:href="@{'/product'(page=${products.number + 1})}" th:if="${products.hasNext()}">Next</a></li>
+                                            </ul>
+                                        </nav>
+
+
+
+<!--                    <div aria-label="Page example">-->
+<!--                        <ul th:if="${products.totalPages > 0}" class="pagination"-->
+<!--                            th:each="pageNumber : ${pageNumbers}">-->
+<!--                            <li class="page-item"><a th:href="@{/listBooks(size=${products.size}, page=${pageNumber})}"-->
+<!--                                                     th:text=${pageNumber}-->
+<!--                                                     th:class="${pageNumber==products.number + 1} ? active"></a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+
                 </div>
-<!--                <div class="table-pagination">-->
-<!--                    <ul class="pagination">-->
-<!--                        <li th:class="${products.number eq 0} ? 'disabled' : ''">-->
-<!--                            <a th:if="${not products.firstPage}" th:href="@{${'/product'}(page=${products.number-1},size=${products.size})}">Previous</a>-->
-<!--                            <a th:if="${products.firstPage}" href="javascript:void(0);">Previous</a>-->
-<!--                        </li>-->
 
-<!--                        <li th:each="pageNo : ${#numbers.sequence(0, products.totalPages - 1)}" th:class="${products.number eq pageNo}? 'active' : ''">-->
-<!--                            <a th:if="${products.number  eq pageNo}" href="javascript:void(0);">-->
-<!--                                <span th:text="${pageNo + 1}"></span>-->
-<!--                            </a>-->
-<!--                            <a th:if="${not (products.number  eq pageNo)}" th:href="@{${'/product'}(page=${pageNo},size=${products.size})}">-->
-<!--                                <span th:text="${pageNo + 1}"></span>-->
-<!--                            </a>-->
+                <!--                <div class="table-pagination">-->
+                <!--                    <ul class="pagination">-->
+                <!--                        <li th:class="${products.number eq 0} ? 'disabled' : ''">-->
+                <!--                            <a th:if="${not products.firstPage}" th:href="@{${'/product'}(page=${products.number-1},size=${products.size})}">Previous</a>-->
+                <!--                            <a th:if="${products.firstPage}" href="javascript:void(0);">Previous</a>-->
+                <!--                        </li>-->
 
-<!--                        </li>-->
-<!--                        <li th:class="${products.number + 1 ge products.totalPages} ? 'disabled' : ''">-->
-<!--                            <a th:if="${not products.lastPage}" th:href="@{${'/product'}(page=${products.number+1},size=${products.size})}">Next</a>-->
-<!--                            <a th:if="${products.lastPage}" href="javascript:void(0);">Next</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
+                <!--                        <li th:each="pageNo : ${#numbers.sequence(0, products.totalPages - 1)}" th:class="${products.number eq pageNo}? 'active' : ''">-->
+                <!--                            <a th:if="${products.number  eq pageNo}" href="javascript:void(0);">-->
+                <!--                                <span th:text="${pageNo + 1}"></span>-->
+                <!--                            </a>-->
+                <!--                            <a th:if="${not (products.number  eq pageNo)}" th:href="@{${'/product'}(page=${pageNo},size=${products.size})}">-->
+                <!--                                <span th:text="${pageNo + 1}"></span>-->
+                <!--                            </a>-->
+
+                <!--                        </li>-->
+                <!--                        <li th:class="${products.number + 1 ge products.totalPages} ? 'disabled' : ''">-->
+                <!--                            <a th:if="${not products.lastPage}" th:href="@{${'/product'}(page=${products.number+1},size=${products.size})}">Next</a>-->
+                <!--                            <a th:if="${products.lastPage}" href="javascript:void(0);">Next</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
                 <!--/ Content with left sidebar col-sm-12 col-md-12 col-lg-9 order-lg-1 -->
-
-
-
 
 
                 <!-- Sidebar left -->
@@ -550,9 +549,10 @@
                             <ul class="product-categories">
                                 <th:block th:each="category : ${category}">
                                     <li class="cat-item current-cat">
-                                        <a th:href="@{'/product?categoryid='+ ${category.getCategoryId()}}" th:utext="${category.getNameCategory()}">${categoryList.getNameCategory()}</a>
-<!--                                        <span-->
-<!--                                            class="count">(12)</span>-->
+                                        <a th:href="@{'/product?categoryid='+ ${category.getCategoryId()}}"
+                                           th:utext="${category.getNameCategory()}">${categoryList.getNameCategory()}</a>
+                                        <!--                                        <span-->
+                                        <!--                                            class="count">(12)</span>-->
 
 
                                     </li>
@@ -1079,6 +1079,7 @@
 <script type="text/javascript" src="js/kl-custom.js"></script>
 
 
+
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -1092,16 +1093,92 @@
 -->
 <script>
     var datasource = [];
+    var datasourceCart=[];
+    var datasourceCart2=[];
     $(document).ready(function () {
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8080/product/list-product-api',
-        data: { get_param: 'value' },
-        success: function (data) {
-            datasource = data;
-        }
+        loadProduct();
+        loadCart();
+
     });
-});
+
+    function loadProduct(){
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/product/list-product-api',
+            data: {get_param: 'value'},
+            success: function (data) {
+                datasource = data;
+            }
+        });
+    };
+    function loadCart(){
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/cart-api',
+            data: {get_param: 'value'},
+            success: function (data) {
+                datasourceCart = data;
+                $.each(datasourceCart, function(i, item) {
+                    $("#cart_content").append(`<ul class="cart_list product_list_widget ">
+                                                    <li>
+                                                        <a href="#" class="remove" title="Remove this item">×</a>
+                                                        <a href="#" class="product-title">
+                                                            <img src="`+datasourceCart[i].imgMain+`"
+                                                                 alt="Kallyas Product" title="Kallyas Product"/>`
+                        +datasourceCart[i].productName+
+                        `</a>
+                                                        <span class="color-variations">Grej</span>
+                                                        <span class="quantity">1 × <span class="amount">1.000.000</span></span>
+                                                    </li>
+                                                </ul>`)
+                });
+            }
+        });
+    }
+    function addToCart(idProduct){
+        $.ajax({
+            type: 'GET',
+            url: '/addToCart?idProduct=' + idProduct,
+            data: {get_param: 'value'},
+            success: function (data) {
+                console.log(data);
+                datasourceCart2 = data;
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Successfully'
+                })
+
+                    $("#cart_content").append(`<ul class="cart_list product_list_widget ">
+                                                    <li>
+                                                        <a href="#" class="remove" title="Remove this item">×</a>
+                                                        <a href="#" class="product-title">
+                                                            <img src="`+datasourceCart2.imgMain+`"
+                                                                 alt="Kallyas Product" title="Kallyas Product"/>`
+                        +datasourceCart2.productName+
+                        `</a>
+                                                        <span class="color-variations">Grej</span>
+                                                        <span class="quantity">1 × <span class="amount">1.000.000</span></span>
+                                                    </li>
+                                                </ul>`)
+                    datasourceCart2 = [];
+
+
+            }
+        });
+    }
+
 </script>
 </body>
 </html>
