@@ -44,6 +44,7 @@ import java.util.Properties;
 @EnableJpaRepositories("com.repositorys")
 @ComponentScan("com.controllers")
 @EnableAspectJAutoProxy
+
 public class WebAppConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
     private ApplicationContext applicationContext;
 
@@ -170,6 +171,10 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements Application
     @Bean
     public ICartService CartService() {
         return new CartService();
+    }
+    @Bean
+    public IOrdersService OrdersService() {
+        return new OrdersService();
     }
     @Bean
     public Logger logger() {

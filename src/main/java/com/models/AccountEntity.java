@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "account", schema = "mikencobrandnew", catalog = "")
 public class AccountEntity {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private int customerId;
     private String username;
     private String password;
